@@ -1,0 +1,787 @@
+/* Global Section */
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: chocolate;
+}
+
+section {
+    padding: 100px 0;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+a {
+    color: #ccc;
+}
+
+/* header Section */
+
+header {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    background-color: #000000aa;
+    position: fixed;
+    padding: 10px 20px;
+    color: white;
+    z-index: 999;
+}
+
+header h1 {
+    left: 30px;
+    position: absolute;
+    font-family: sans-serif;
+}
+
+header span {
+    color: yellowgreen;
+    padding: 3px;
+}
+
+.b {
+    position: absolute;
+    right: 90px;
+    top: 20px;
+}
+
+header a {
+    text-decoration: none;
+    color: white;
+    margin-right: 15px;
+}
+
+header a:hover {
+    color: #e85608;
+}
+
+header a:hover span {
+    color: #e85608;
+}
+
+#logo {
+    position: absolute;
+    left: 125px;
+    top: 15px;
+}
+
+#hom {
+    font-size: 30px;
+    margin: 8px;
+    right: 56px;
+    position: absolute;
+    color: blanchedalmond;
+    top: 7px;
+    padding: 5px;
+    border-radius: 5px;
+    transition: all 0.5s ease-in-out;
+}
+
+#hom:hover {
+    background: #058c10;
+    cursor: pointer;
+}
+
+.links {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+.links a {
+    display: block;
+    padding: 60px;
+    background-color: #000000aa;
+    color: #fff;
+    width: 100%;
+    transition: 0.5s;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    z-index: 999;
+}
+
+.links span {
+    left: 10px;
+    color: #fff;
+    position: absolute;
+}
+
+.links a:hover {
+    color: #e85608;
+}
+
+#b {
+    display: none;
+}
+
+/* Accounts Section */
+
+.signUp label, .signIn label {
+    display: block;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 5px;
+}
+
+.signUp input, .signIn input {
+    width: 280px;
+    padding: 10px;
+    padding-right: 20px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid green;
+    font-size: 20px;
+    color: crimson;
+}
+
+.signUp input:focus, .signIn input:focus {
+    outline: none;
+}
+
+.signUp {
+    display: none;
+}
+
+.signIn {
+    display: none;
+}
+
+.signUp, .signIn {
+    justify-content: center;
+    background: #000000aa;
+    width: 50%;
+    position: fixed;
+    z-index: 50;
+    left: 25%;
+    transition: 0.5s;
+    border-radius: 20px;
+    margin-top: 60px;
+    padding: 50px 10px;
+    overflow: hidden;
+    color: chartreuse
+}
+
+.signUp legend, .signIn legend {
+    font-size: 25px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.signUp fieldset, .signIn fieldset {
+    width: 100%;
+}
+
+.signUp .sign, .signIn .sign {
+    background: #47fa2c;
+    border-radius: 20px;
+    padding-left: 20px;
+    color: #fff;
+    transition: all 0.5s ease-in-out;
+    margin-left: 20%;
+}
+
+.signUp .sign:hover, .signIn .sign:hover {
+    transform: scale(1.2);
+    background: transparent;
+    color: #47fa2c;
+    cursor: pointer;
+    font-weight: bold;
+    transform: translateY(-3px);
+    box-shadow: 0 15px #00000033;
+}
+
+.closeb {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 30px;
+    color: crimson;
+    cursor: pointer;
+}
+
+.signUp p, .signIn p {
+    text-align: center;
+    margin: 5px;
+}
+
+/* Home Section */
+
+#home {
+    background: url('../Images/JuneMontage (13)-1.jpg') no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 50vh;
+    padding: 200px 0px;
+    text-align: center;
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+    position: relative;
+    font-weight: 800;
+}
+
+#home h1 {
+    animation: moveInRight 2s ease-in;
+}
+
+#home p {
+    padding: 20px;
+    animation: comeIn 1s linear;
+    animation: moveInLeft 2s ease-in;
+}
+
+#hSignUp:link, #hSignUp:visited {
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 15px 40px;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all .2;
+    position: relative;
+}
+
+#hSignUp:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px #00000033;
+    color: #fff;
+    background: transparent;
+}
+
+#hSignUp:active {
+    transform: translateY(-1px);
+    box-shadow: 0 10px rgba(0, 0, 0, .2);
+}
+
+.hSignUp-white {
+    /* background: #fff; */
+    color: #777;
+}
+
+#hSignUp::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 100px;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+.hSignUp-white::after {
+    background-color: #fff;
+}
+
+#hSignUp:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+.hSignUp-animation {
+    /* animation: moveInBottom 1s ease-out 0.75s; */
+    animation: beat 1s linear infinite;
+    animation-fill-mode: backwards;
+}
+
+/* About Section */
+
+#about {
+    height: 330vh;
+    background: url('../images/1769 - Copy.jpg') no-repeat;
+    background-size: cover;
+    font-size: 20px;
+    color: #000000;
+}
+
+#about p {
+    padding: 10px;
+}
+
+#about #fh1 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bolder;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+#about #fh1::before {
+    content: "";
+    position: absolute;
+    width: 345px;
+    height: 3px;
+    background: black;
+    bottom: -15px;
+    z-index: 1;
+}
+
+#about #fh1::after {
+    content: "What we offer";
+    position: absolute;
+    width: 180px;
+    background: White;
+    bottom: -18px;
+    font-size: 20px;
+    margin-left: -270px;
+    height: 18px;
+    z-index: 1;
+    color: #044f0c;
+}
+
+#about #fh2 {
+    text-decoration: underline;
+    padding: 30px;
+}
+
+#levels p {
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+#levels h1 {
+    color: #d6a501;
+    font-weight: 700;
+}
+
+#levels fieldset {
+    padding: 40px 30px;
+    margin-bottom: 15px;
+    font-size: 30px;
+    background: url('../Images/royal-golden-floral-background_Mk03532__thumb.jpg') no-repeat;
+    background-size: cover;
+    color: #ffffff;
+    font-weight: bold;
+    border: 3px dashed #ffffff56;
+    margin: 10px;
+    float: left;
+    width: 500px;
+    height: 200px;
+}
+
+/* Contact Section */
+
+#contact {
+    background: #000000aa;
+    text-align: center;
+    color: #dc7514;
+}
+
+#contact h1 {
+    text-align: center;
+    font-size: 30px;
+    text-transform: uppercase;
+    padding: 15px;
+}
+
+#contact div {
+    display: flex;
+    justify-content: center;
+}
+
+#contact div a {
+    padding: 30px;
+    font-size: 40px;
+    text-decoration: none;
+    width: 100%;
+    text-align: center;
+    transition: all 0.5s ease-in-out;
+}
+
+#contact div a i {
+    padding-right: 20px;
+}
+
+#contact div a:hover {
+    color: #dc7514;
+    background: bisque;
+}
+
+/* Take Away */
+
+#forgottenPass input {
+    padding: 15px;
+    width: 60%;
+    border: 2px dashed peru;
+    border-radius: 10px;
+    background: transparent;
+    color: #fff;
+    text-align: center
+}
+
+#forgottenPass input:focus {
+    outline: none;
+}
+
+#forgottenPass #srchAccount {
+    margin-left: 15%;
+    color: #ccc;
+    background: #555;
+    border: 2px dashed #3d2002;
+    transition: all 0.5s ease-in-out;
+}
+
+#forgottenPass #srchAccount:hover {
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out;
+    background: transparent;
+    color: #555;
+}
+
+#forgottenPass #srchAccount:active {
+    transform: translateX(-10px);
+}
+
+#forgottenPass #fTopPart {
+    margin-top: 70px;
+}
+
+#forgottenPass .slinks {
+    text-align: center;
+}
+
+#forgottenPass a {
+    color: blue;
+}
+
+#emailPart, #byNumber {
+    display: none;
+}
+
+#forgottenPass aside p {
+    font-size: 22px;
+    color: #435750;
+    cursor: pointer;
+}
+
+#forgottenPass aside {
+    margin-bottom: 50px;
+    z-index: 9;
+    background: inherit;
+    width: 100%;
+}
+
+#forgottenPass aside p span {
+    padding-right: 20px;
+}
+
+#forgottenPass {
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    top: 0;
+    position: fixed;
+    background: inherit;
+    transition: all 0.5s ease-in-out;
+    color: inherit;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    background: rgba(0, 0, 0, 0.467);
+}
+
+#forgottenPass.close {
+    width: 0px;
+    height: 0px;
+    transition: all 0.5s ease-in-out;
+}
+
+#forgottenPass.close aside {
+    display: none;
+}
+
+#forgottenPass div {
+    position: relative;
+    box-shadow: 1px 2px 4px #eeeded80;
+    margin: 10px;
+    background: black;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+}
+
+/* Animation Section */
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    60% {
+        transform: rotate(180deg);
+    }
+    80% {
+        transform: translateX(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes beat {
+    5% {
+        background: red;
+    }
+    10% {
+        background: orange;
+    }
+    10% {
+        background: yellow;
+    }
+    15% {
+        background: green;
+    }
+    40% {
+        background: blue;
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    60% {
+        background: indigo;
+    }
+    100% {
+        background: violet;
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translatex(100%);
+    }
+    80% {
+        transform: translateX(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+/* Responsiveness */
+
+@media(max-width: 1250px) {
+    #levels fieldset {
+        padding: 30px 30px;
+        width: 400px;
+        height: 210px;
+    }
+}
+
+@media(max-width: 1050px) {
+    #levels fieldset {
+        padding: 30px 10px;
+        width: 400px;
+        height: 210px;
+    }
+}
+
+@media(max-width: 950px) {
+    #levels fieldset {
+        padding: 20px 10px;
+        width: 370px;
+        height: 210px;
+    }
+}
+
+@media(max-width: 850px) {
+    .b {
+        font-size: 12px;
+        right: 50px;
+    }
+    .signUp, .signIn {
+        width: 100%;
+        left: 0;
+    }
+    .signUp label, .signIn label {
+        font-size: 15px;
+    }
+    .closeb {
+        right: 30px;
+    }
+    #levels fieldset {
+        padding: 20px 10px;
+        width: 350px;
+        height: 200px;
+    }
+}
+
+@media(max-width: 845px) {
+    #levels fieldset {
+        padding: 20px 10px;
+        width: 300px;
+        height: 210px;
+    }
+}
+
+@media(max-width: 800px) {
+    .b {
+        font-size: 12px;
+        right: 50px;
+    }
+    #levels fieldset {
+        padding: 20px 10px;
+        width: 90%;
+        height: 210px;
+    }
+    #about {
+        height: 570vh;
+    }
+}
+
+@media(max-width: 700px) {
+    /* Home */
+    #home {
+        height: 40vh;
+    }
+    #home h1 {
+        font-size: 28px;
+        height: 40px;
+    }
+    #home p {
+        font-size: 25px;
+        height: 100px;
+    }
+    #hSignUp:link, #hSignUp:visited {
+        padding: 10px 20px;
+        font-size: 15px;
+    }
+    .b {
+        display: none;
+    }
+    #b {
+        display: block;
+    }
+    /* About */
+    #about {}
+    #about #fh1 {
+        font-size: 25px;
+    }
+    #about #fh1::before {
+        content: "";
+        width: 245px;
+        height: 3px;
+        background: black;
+        margin-left: 20px;
+    }
+    #about #fh1::after {
+        content: "What we offer";
+        font-size: 15px;
+        margin-left: -240px;
+    }
+}
+
+@media(max-width: 690px) {
+    .b {
+        font-size: 12px;
+        right: 50px;
+    }
+}
+
+@media(max-width: 680px) {
+    body {
+        background-color: lightgreen;
+    }
+    #accounts {
+        width: 100%;
+        left: 0;
+    }
+    #contact {
+        color: #47fa2c;
+    }
+    #contact div a:hover {
+        color: #14dc1b;
+        background: bisque;
+    }
+}
+
+@media (max-width: 550px) {
+    #about {
+        height: 460vh;
+    }
+    #about p {
+        font-size: 18px;
+    }
+    #levels p {
+        font-size: 25px;
+        padding-bottom: 5px;
+    }
+    #levels h1 {
+        color: #d6a501;
+        font-weight: 700;
+        font-size: 30px;
+    }
+    #levels fieldset {
+        width: 450px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 510px) {
+    #about {
+        height: 470vh;
+    }
+    #levels fieldset {
+        width: 400px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 450px) {
+    #about {
+        height: 480vh;
+    }
+}
+
+@media (max-width: 460px) {
+    #levels fieldset {
+        width: 350px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 405px) {
+    #about {
+        height: 490vh;
+    }
+    #levels fieldset {
+        width: 330px;
+        height: 140px;
+    }
+}
+
+@media(max-width: 380px) {
+    #home p {
+        font-size: 20px;
+        height: 100px;
+    }
+}

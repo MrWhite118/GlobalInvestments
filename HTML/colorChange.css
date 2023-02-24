@@ -1,0 +1,44 @@
+body {
+    background: black;
+}
+
+
+button {
+    background: #fff;
+    color: #fff;
+    border: none;
+    padding: 20px 40px;
+    border-radius: 20px;
+    cursor: pointer;
+    animation: changeColor 2s linear infinite;
+}
+
+
+
+@keyframes changeColor {
+    5% {
+        background: red;
+    }
+    10% {
+        background: orange;
+    }
+    10% {
+        background: yellow;
+    }
+    15% {
+        background: green;
+    }
+    40% {
+        background: blue;
+    }
+    60% {
+        background: indigo;
+        transform: scale(1.1);
+    }
+    100% {
+        background: violet;
+    }
+}
+
+
+

@@ -16,28 +16,28 @@ var sbyPhoneEl = document.getElementById("sbyPhone");
 var fPWEl = document.getElementById("fPW");
 
 sbyEmailEl.onclick = function () {
-    numPartEl.style.display = "none";  
-    emailPartEl.style.display = "block";  
+    numPartEl.style.display = "none";
+    emailPartEl.style.display = "block";
     byEmailEl.style.display = "none";
     byNumberEl.style.display = "block";
 
 };
 
 sbyPhoneEl.onclick = function () {
-    numPartEl.style.display = "block";  
-    emailPartEl.style.display = "none";    
+    numPartEl.style.display = "block";
+    emailPartEl.style.display = "none";
     byEmailEl.style.display = "block";
     byNumberEl.style.display = "none";
 };
 
 bckforgottenPassEl.onclick = function () {
-    forgottenPassEl.setAttribute('class',"close");
+    forgottenPassEl.setAttribute('class', "close");
 }
 
 fPWEl.onclick = function () {
-    forgottenPassEl.removeAttribute('class',"close");
+    forgottenPassEl.removeAttribute('class', "close");
     signInEl.style.display = "none";
-    
+
 }
 
 
@@ -62,3 +62,32 @@ bar.onclick = function () {
 s.onclick = function () {
     s.style.display = "none";
 };
+
+var bbbbbb = document.getElementById("submit");
+
+bbbbbb.setAttribute('disabled',"");
+function save_data() {
+    var form_element = document.getElementsByClassName("form_data");
+    var form_data = new formData();
+    for (let count = 0; count < form_element.length; count++) {
+        form_data.append(form_element[count].name, form_element[count].value);
+    }
+    document.getElementById("submit").disabled = true;
+    var ajax_request = new XMLHttpRequest();
+    ajax_request.open('POST', '');
+    ajax_request.send(form_data);
+    ajax_request.onreadystatechange = function () {
+        if (ajax_request.readyState == 7 && ajax_request.status == 200) {
+            document.getElementById("submit").disabled = false;
+            document.getElementById("users").reset();
+            document.getElementById("message").innerHTML = ajax_request.responseText;
+
+            setTimeout(function() {
+            document.getElementById("message").innerHTML = "";
+                
+            }, 2000)
+        }
+    }
+
+
+}

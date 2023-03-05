@@ -55,38 +55,39 @@
             <div class="closeb">
                 <span class="fa fa-times" onclick="cPopUp()"></span>
             </div>
-            <form action="profilePage.htm">
+            <form  id="users" method="POST">
+                <span id="message"></span>
                 <fieldset>
                     <legend>Create an Account</legend>
                     <label for="fname">First Name:
-                        <input type="text" placeholder="Input firstname here..." required>
+                        <input type="text" placeholder="Input firstname here..." class="form-control form_data" name="fName" required>
                     </label>
                     <label for="mname">Middle Name:
-                        <input type="text" placeholder="Input middle here...">
+                        <input type="text" placeholder="Input middle here..." class="form-control form_data" name="mName">
                     </label>
                     <label for="fname">Last Name:
-                        <input type="text" placeholder="Input lastname here..." required>
+                        <input type="text" placeholder="Input lastname here..." class="form-control form_data" required name="lName">
                     </label>
                     <label for="number">Phone Number:
-                        <input type="number" placeholder="Input phone No here..." required>
+                        <input type="number" placeholder="Input phone No here..." class="form-control form_data" name="pNo" required >
                     </label>
                     <label for="email">Email Address:
-                        <input type="email" placeholder="Enter Email here..." required>
+                        <input type="email" placeholder="Enter Email here..." class="form-control form_data" name="email" required >
                     </label>
                     <label for="ref">Referral code:
-                        <input type="text" placeholder="Enter referal code here...">
+                        <input type="text" placeholder="Enter referal code here..." class="form-control form_data" name="reff">
                     </label>
                     <label for="uname">Username:
-                        <input type="text" placeholder="Input prefered username here..." required>
+                        <input type="text" placeholder="Input prefered username here..." class="form-control form_data" name="uName" required>
                     </label>
                     <label for="pass">Password:
-                        <input type="password" placeholder="Input a unique password here..." required>
+                        <input type="password" placeholder="Input a unique password here..." class="form-control form_data" name="pass" required>
                     </label>
                     <label for="cpass">Confirm Password:
-                        <input type="password" placeholder="Confirm your unique password here..." required>
+                        <input type="password" placeholder="Confirm your unique password here..." class="form-control form_data" name="cPass" required>
                     </label>
                     <label for="submit">
-                        <input type="submit" value="Sign Up" class="sign">
+                        <input type="submit" name="signUp" value="Sign Up" class="sign">
                     </label>
                     <p>Already have an Account?
                         <a href="#" onclick="signIn()">Sign In</a>
@@ -107,7 +108,7 @@
                     <label for="pass">Password:
                         <input type="password" placeholder="Input your password here..." required>
                     </label>
-                    <input type="submit" value="Sign In" class="sign">
+                    <input type="submit" value="Sign In" class="sign"  onclick="save_data(); return false;" id="submit">
                     </label>
                     <p>
                         <a href="#" id="fPW">Forgotten Password?</a>

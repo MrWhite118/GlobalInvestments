@@ -27,12 +27,12 @@
                 <a href="#" title="Already have an Account?" onclick="signIn()">
                     <span class="fa fa-sign-in-alt"></span> Log In</a>
                 <a href="#contact" title="Contact us">
-                    <span class="fa fa-phone"></span> Contact us</a>
+                    <span class="fa fa-phone"></span> Contacts</a>
             </nav>
         </div>
         <div id="div">
             <img src="../Images/G.I" alt="g.i" width="20px" id="logo">
-            <h1> Global
+            <h1 class="cName"> Global
                 <span>Invest</span>
             </h1>
             <!-- <span class="fa fa-list" id="home"></span> -->
@@ -46,7 +46,7 @@
                 <a href="#" title="Already have an Account?" onclick="signIn()">
                     <span class="fa fa-sign-in-alt"></span> Log In</a>
                 <a href="#contact" title="Contact us">
-                    <span class="fa fa-phone"></span> Contact us</a>
+                    <span class="fa fa-phone"></span> Contacts</a>
             </nav>
         </div>
     </header>
@@ -55,39 +55,39 @@
             <div class="closeb">
                 <span class="fa fa-times" onclick="cPopUp()"></span>
             </div>
-            <form  id="users" method="POST">
+            <form id="users" method="POST">
                 <span id="message"></span>
                 <fieldset>
                     <legend>Create an Account</legend>
                     <label for="fname">First Name:
-                        <input type="text" placeholder="Input firstname here..." class="form-control form_data" name="fName" required>
+                        <input type="text" placeholder="Input firstname here..." class="form-control form_data" name="fname" id="fName" required>
                     </label>
                     <label for="mname">Middle Name:
-                        <input type="text" placeholder="Input middle here..." class="form-control form_data" name="mName">
+                        <input type="text" placeholder="Input middle here..." class="form-control form_data" name="mname" id="mName">
                     </label>
-                    <label for="fname">Last Name:
-                        <input type="text" placeholder="Input lastname here..." class="form-control form_data" required name="lName">
+                    <label for="lname">Last Name:
+                        <input type="text" placeholder="Input lastname here..." class="form-control form_data"  name="lname" id="lName" required>
                     </label>
                     <label for="number">Phone Number:
-                        <input type="number" placeholder="Input phone No here..." class="form-control form_data" name="pNo" required >
+                        <input type="number" placeholder="Input phone No here..." class="form-control form_data" name="pNo" id="pNo" required>
                     </label>
                     <label for="email">Email Address:
-                        <input type="email" placeholder="Enter Email here..." class="form-control form_data" name="email" required >
+                        <input type="email" placeholder="Enter Email here..." class="form-control form_data" name="email" id="email" required>
                     </label>
                     <label for="ref">Referral code:
-                        <input type="text" placeholder="Enter referal code here..." class="form-control form_data" name="reff">
+                        <input type="text" placeholder="Enter referal code here..." class="form-control form_data" name="reff" id="reff">
                     </label>
                     <label for="uname">Username:
-                        <input type="text" placeholder="Input prefered username here..." class="form-control form_data" name="uName" required>
+                        <input type="text" placeholder="Input prefered username here..." class="form-control form_data" name="uname" id="uName" required>
                     </label>
                     <label for="pass">Password:
-                        <input type="password" placeholder="Input a unique password here..." class="form-control form_data" name="pass" required>
+                        <input type="password" placeholder="Input a unique password here..." class="form-control form_data pps" name="password" id="pass" required> <span class="fas fa-eye" id="pps"></span>
                     </label>
                     <label for="cpass">Confirm Password:
-                        <input type="password" placeholder="Confirm your unique password here..." class="form-control form_data" name="cPass" required>
+                        <input type="password" placeholder="Re-write password here..." class="form-control form_data pps" name="cPass" id="cPass"> <span class="fas fa-eye" id="pps1"></span>
                     </label>
                     <label for="submit">
-                        <input type="submit" name="signUp" value="Sign Up" class="sign">
+                        <input type="button" name="signUp" value="Sign Up" class="sign" onclick="save_data(); return false;" id="submita">
                     </label>
                     <p>Already have an Account?
                         <a href="#" onclick="signIn()">Sign In</a>
@@ -99,16 +99,18 @@
             <div class="closeb">
                 <span class="fa fa-times" onclick="cPopUp()"></span>
             </div>
-            <form action="profilePage.htm">
+            <form action="login.php" method="POST">
                 <fieldset>
+
+                <p class="error"></p>
                     <legend>Sign In</legend>
                     <label for="uname">Usernme:
-                        <input type="text" placeholder="Input your username here..." required>
+                        <input type="text" name="uname" placeholder="Input your username here..." required>
                     </label>
                     <label for="pass">Password:
-                        <input type="password" placeholder="Input your password here..." required>
+                        <input type="password" name="password" placeholder="Input your password here..." required id="logPass"> <span class="fas fa-eye" id="pps2"></span>
                     </label>
-                    <input type="submit" value="Sign In" class="sign"  onclick="save_data(); return false;" id="submit">
+                    <input type="submit" value="Sign In" class="sign">
                     </label>
                     <p>
                         <a href="#" id="fPW">Forgotten Password?</a>
@@ -121,6 +123,8 @@
         </div>
     </div>
     <section id="home">
+        
+        <p>Contribution has just gotten Easier and Faster...</p>
         <h1 class="typ"></h1>
         <p>From a Thousand Naira to One Hundred and Sixty Thousand Naira (N160,000) within 60 Days!</p>
         <br>
@@ -151,7 +155,7 @@
         <p>No one says it's gonna be easy but we all know that money won't grow legs overnight and walk up to you in the morning,
             so you gats work towards it yourself, There's no such thing as "small work", we all are just praying for blessings...</p>
         <p>There are originally
-            <b>Ten levels (10)</b> in this platform where you'll have to pass through to make this possible...</p>
+            <b>Ten (10) levels</b> in this platform where you'll have to pass through to make this possible...</p>
         <div id="levels">
             <fieldset>
                 <legend>
@@ -225,15 +229,25 @@
             </fieldset>
         </div>
     </section>
+
+    <!-- Contact Section Starts -->
+    
+  
     <section class="contact" id="contact">
-        <h1>Contact Us</h1>
-        <p>You can contact us via the follow medias listed below...</p>
-        <nav id="contacts">
+        <div>
+            <img src="../Images/G.I" alt="g.i" width="20px" class="logo">
+            <h1 class="cName"> Global
+                <span>Invest</span>
+            </h1>
+        </div>
+
+        <div id="contacts">
+            <h3>Get in touch with us</h3>
             <div>
 
-                <a href="#">
+                <a href="mailto:globalinvestment118@gmail.com">
                     <i class="far fa-envelope"></i>
-                    Email
+                    <span>Email</span>
                 </a>
 
             </div>
@@ -241,33 +255,31 @@
 
                 <a href="#">
                     <i class="fab fa-whatsapp"></i>
-                    WhatsApp
+                    <span>WhatsApp</span>
                 </a>
 
             </div>
-            <h1>Follow Us</h1>
-            <p>Follow us via the platforms listed below for updates on the platform...</p>
             <div>
 
-                <a href="#">
+                <a href="https://web.facebook.com/Global.Invest118">
                     <i class="fab fa-facebook"></i>
-                    Facebook
+                    <span>Facebook</span>
                 </a>
 
             </div>
             <div>
 
-                <a href="#">
+                <a href="https://twitter.com/GlobalInvest118">
                     <i class="fab fa-twitter"></i>
-                    Twitter
+                    <span>Twitter</span>
                 </a>
 
             </div>
             <div>
 
-                <a href="#">
+                <a href="https://t.me/GlobalInvestment118">
                     <i class="fab fa-telegram"></i>
-                    Telegram
+                    <span>Telegram</span>
                 </a>
 
             </div>
@@ -275,20 +287,71 @@
 
                 <a href="#">
                     <i class="fab fa-tiktok"></i>
-                    TikTok
+                    <span>TikTok</span>
                 </a>
 
             </div>
             <div>
 
-                <a href="#">
+                <a href="https://www.instagram.com/global_investment118/">
                     <i class="fab fa-instagram"></i>
-                    Instagram
+                    <span>Instagram</span>
                 </a>
 
             </div>
-        </nav>
+        </div>
+        <div class="ooooo">
+            <h3>Other Benefits</h3>
+            <div>
+                <a href="https://www.globaltechsworld.net/courses-single-post.php?Course_Overview=3?WEB%20Frontend%20and%20BackEnd%20Dev">
+                    <i class="fas fa-paint-brush"></i>
+                    <span>Web Design</span>
+                </a>
+
+            </div>
+            <div>
+                <a href="https://www.globaltechsworld.net/courses-single-post.php?Course_Overview=11?GRAPHICS%20DESIGN%20AND%20MEDIA">
+                    <i class="fas fa-palette"></i>
+                    <span>Graphics Design</span>
+                </a>
+            </div>
+            <div>
+                <a href="https://www.globaltechsworld.net/courses-single-post.php?Course_Overview=29?UI/UX%20Figma%20Web%20AND%20Mobile%20Design">
+                    <i class="fab fa-figma"></i>
+                    <span>UI/UX Design</span>
+                </a>
+            </div>
+        </div>
+        <div class="fac">
+            <h3>FAQ</h3>
+            <div>
+                <h4 class="open1">
+                    Why should me as a normal person join this platform?
+                    <i class="fas fa-chevron-down open" id="open1"></i>
+                </h4>
+                <div class="answer">
+                    <h5>Why not?</h5>
+                    <br>
+                    <p>If you truly are a normal person then why wouldn't you want to earn?. It's been said that you will be
+                        able to earn N160,000 or more within 60 days so why on earth won't you wan't to take it up?, uless
+                        perharps you're the likes of Dangote and the rest sha, then the money might seem too small for you</p>
+                </div>
+            </div>
+            <div>
+                <h4 class="open1">
+                    Will my money will be safe here?
+                    <i class="fas fa-chevron-down open" id="open2"></i>
+
+                </h4>
+                <div class="answer">
+                    <h5>Yeah 100%</h5>
+                    <br>
+                    <p>Although you can never be too sure untill you see for yourself or perhaps others now can you? </p>
+                </div>
+            </div>
+        </div>
     </section>
+
 
 
     <section id="forgottenPass" class="close">

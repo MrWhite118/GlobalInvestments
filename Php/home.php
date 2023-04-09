@@ -1,3 +1,25 @@
+<?php 
+session_start();
+require_once('./db_conn.php');
+function getUser($id) {
+    global $conn;
+    $sql = "SELECT * FROM users WHERE `id` = ". $id;
+    $query = mysqli_query($conn, $sql);
+    if(mysqli_num_rows($query) === 1) {
+        $user = mysqli_fetch_assoc($query);
+    } else {
+        $user = null;
+    }
+    return $user;
+}
+if(isset($_SESSION['id'])) {
+    $id = (int) $_SESSION['id'];
+ $user = getUser($id);
+//  var_dump($user);
+// echo($user['first_name']." ".$user['middle_name']);
+    ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,6 +33,8 @@
     <link rel="icon" href="../Images/G.I">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong">
     <!-- <link rel="stylesheet" href="../CSS/bootstrap.min.css"> -->
+    <script src="../Scripts/JS/jquery-3.5.1.min.js"></script>
+    
 </head>
 
 <body>
@@ -18,7 +42,7 @@
         <div id="acc">
             <span class="fas fa-align-right"></span>
         </div>
-        <h1 id="userrName">MrWhite118</h1>
+        <h1 id="userrName"><?php echo $user['user_name']; ?></h1>
     </header>
     <br>
 
@@ -26,22 +50,22 @@
     <section id="dashboard">
         <h2>Dashboard</h2>
         <div>
-            <p>Investment Level:
+            <p><b>Investment Level:</b>
                 <span id="investL">0</span>
             </p>
         </div>
         <div>
-            <p>Main Balance:
+            <p><b>Main Balance:</b>
                 <span>N0</span>
             </p>
         </div>
         <div>
-            <p>Growing Balance:
+            <p><b>Growing Balance:</b>
                 <span>N0</span>
             </p>
         </div>
         <div id="referrals">
-            <p>Referral Earnings:
+            <p><b>Referral Earnings:</b>
                 <span>N0</span>
             </p>
         </div>
@@ -50,11 +74,11 @@
     <!-- Message Section Starts -->
     <section id="message">
         <div>
-            <p class="fMessage">Messages
+            <p class="fMessage"><b>Messages</b>
                 <span class="mCount mTotal">1</span>
                 <i class="fas fa-chevron-up" id="closeMessage"></i>
             </p>
-            <p class="sMessage">Messages
+            <p class="sMessage"><b>Messages</b>
                 <span class="mCount mTotal">1</span>
                 <i class="fas fa-chevron-down" id="openMessage"></i>
             </p>
@@ -120,9 +144,11 @@
             </p>
         </div>
         <div>
-            <p id="logOut">Log out
+            <a href="logout.php">
+            <p id="logOut" onclick="logout()">Log out
                 <span class="fas fa-sign-out-alt"></span>
             </p>
+            </a>
         </div>
     </section>
 
@@ -175,7 +201,7 @@
             <div>
                 <p>Hello
                     <span>
-                        <b class="username">userName</b>
+                        <b class="username"><?php echo $_SESSION['user_name']; ?></b>
                     </span>!!</p>
             </div>
             <div>
@@ -235,7 +261,8 @@
             <center>
                 <h4>How to Earn</h4>
             </center>
-            <div class="how">
+          <center>
+          <div class="how">
                 <span class="fas fa-share-alt">
                     <br>
                     <br> Share link</span>
@@ -249,6 +276,7 @@
                     <br> Friends Invest</span>
 
             </div>
+          </center>
             <div>
                 <center>
                     <p>The more you invite the more you earn</p>
@@ -290,12 +318,12 @@
                 <div>
                     <p>
                     <b>WhatsApp us @:</b>
-                    <a href="#"> +234 816 466 6798</a>
+                    <a href="#"> wa:me/GlobalInvestment.com</a>
             </p>
             <div>
                 <p>
                     <b>Follow our twitter channel @:</b>
-                    <a href="#">globalinvestment118@twitter.com</a>
+                    <a href="https://twitter.com/GlobalInvest118">twitter.com/GlobalInvest118</a>
                 </p>
             </div>
             <div>
@@ -307,7 +335,7 @@
             <div>
                 <p>
                     <b>Follow our telegram channel @:</b>
-                    <a href="#">globalinvestment118@telegram.com</a>
+                    <a href="https://t.me/GlobalInvestment118">t.me/GlobalInvestment118</a>
                 </p>
             </div>
 
@@ -324,7 +352,8 @@
         </aside>
         <div id="addDiv">
             <button>
-                <span class="fas fa-plus"></span> Add payment option</button>
+                <span class="fas fa-plus"></span> Add payment option
+            </button>
 
         </div>
     </section>
@@ -339,28 +368,28 @@
                 <h1>Contribution</h1>
             </center>
             <div>
-                <p>Contributor's Name:
-                    <span class="fullName"></span>
+                <p><b>Contributor's Name:</b>
+                    <span class="fullName"> <?php echo ($user['last_name']." ".$user['first_name']." ".$user['middle_name']); ?></span>
                 </p>
             </div>
             <div>
-                <p>Investment Level:
-                    <span class="currentLevel"></span>
+                <p><b>Investment Level:</b>
+                    <span class="currentLevel">0</span>
                 </p>
             </div>
             <div>
-                <p>Amount to Contribute:
-                    <span class="amntTocontribute"></span>
+                <p><b>Amount to Contribute:</b>
+                   <span>N<span class="amntTocontribute">1,000</span></span>
                 </p>
             </div>
             <div>
-                <p>Amount to Recieve:
-                    <span class="amntToReceive"></span>
+                <p><b>Amount to Recieve:</b>
+                    <span>N<span class="amntToReceive">5,000</span></span>
                 </p>
             </div>
             <div>
-                <p>Duration:
-                    <span class="recDuration"></span>
+                <p><b>Duration:</b>
+                    <span class="recDuration">5mins</span>
                 </p>
             </div>
             <div id="conBtn">
@@ -379,38 +408,38 @@
         <div>
             <h3>About Me</h3>
             <div>
-                <p>Full Name:
-                    <span class="fullName"></span>
+                <p><b>Full Name:</b>
+                    <span class="fullName"><?php echo ($user['last_name']." ".$user['first_name']." ".$user['middle_name']); ?></span>
                 </p>
             </div>
             <div>
-                <p>Username:
-                    <span class="username"></span>
+                <p><b>Username:</b>
+                    <span class="username"><?php echo($user['user_name']) ?></span>
                 </p>
             </div>
             <div>
-                <p>Email Address:
-                    <span class="emailAddress"></span>
+                <p><b>Email Address:</b>
+                    <span class="emailAddress"><a href="mailto:<?php echo($user['email_address']) ?>"><?php echo($user['email_address']) ?></a></span>
                 </p>
             </div>
             <div>
-                <p>Phone Number:
-                    <span class="phoneNumber"></span>
+                <p><b>Phone Number:</b>
+                    <span class="phoneNumber"><a href="#"><?php echo($user['phone_number']) ?></a></span>
                 </p>
             </div>
             <div>
-                <p>Investment Level:
-                    <span class="currentLevel"></span>
+                <p><b>Investment Level:</b>
+                    <span class="currentLevel">0</span>
                 </p>
             </div>
             <div>
-                <p>Total Investment:
-                    <span class="totalInvestment"></span>
+                <p><b>Total Investment:</b>
+                    <span>N<span class="totalInvestment">0</span></span>
                 </p>
             </div>
             <div>
-                <p>Total Referrals:
-                    <span class="totalInvites"></span>
+                <p><b>Total Referrals:</b>
+                    <span class="totalInvites">0</span>
                 </p>
             </div>
         </div>
@@ -503,12 +532,12 @@
 
             <div id="codes">
                 <form action="#">
-                    <input type="text" required>
-                    <input type="text" required>
-                    <input type="text" required>
-                    <input type="text" required>
-                    <input type="text" required>
-                    <input type="text" required>
+                    <input type="text" required maxlength="1" id="codes1">
+                    <input type="text" required maxlength="1" id="codes2">
+                    <input type="text" required maxlength="1" id="codes3">
+                    <input type="text" required maxlength="1" id="codes4">
+                    <input type="text" required maxlength="1" id="codes5">
+                    <input type="text" required maxlength="1" id="codes6">
                 </form>
             </div>
             <div>
@@ -562,3 +591,11 @@
 </body>
 
 </html>
+ <?php
+}
+else {
+    header("Location: index.php");
+    exit();
+}
+
+?>

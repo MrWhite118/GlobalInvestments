@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Work</title>
+</head>
+<body>
+
+        <form id="users" method="POST">
+           
+    <span id="message"></span>
+    <label for="fname">First Name:
+        <input type="text" placeholder="Input firstname here..." class="form-control form_data" name="fName" id="fName">
+    </label>
+    <label for="mname">Middle Name:
+        <input type="text" placeholder="Input middle here..." class="form-control form_data" name="mName" id="mName">
+    </label>
+    <label for="lname">Last Name:
+        <input type="text" placeholder="Input lastname here..." class="form-control form_data"  name="lName" id="lName">
+    </label>
+    <label for="number">Phone Number:
+        <input type="number" placeholder="Input phone No here..." class="form-control form_data" name="pNo" id="pNo" >
+    </label>
+    <label for="email">Email Address:
+        <input type="email" placeholder="Enter Email here..." class="form-control form_data" name="email" id="email" >
+    </label>
+    <input type="button" name="signUp" value="Sign Up" class="sign" onclick="save_data(); return false;" id="submita">
+ </form>
+
+
+
+
+
+
+
+
+    <script>
+        function save_data() {
+    var form_element = document.getElementsByClassName("form_data");
+    var form_data = new FormData();
+    for (let count = 0; count < form_element.length; count++) {
+        form_data.append(form_element[count].name, form_element[count].value);
+    }
+
+    document.getElementById("submita").disabled = true;
+
+    var ajax_request = new XMLHttpRequest();
+    ajax_request.open('POST', 'something.php');
+    ajax_request.send(form_data);
+    ajax_request.onreadystatechange = function ()
+     {
+        if (ajax_request.readyState == 4 && ajax_request.status == 200) {
+            console.log("yes");
+            
+            document.getElementById("submita").disabled = false;
+            document.getElementById("users").reset();
+            document.getElementById("message").innerHTML = ajax_request.responseText;
+
+            setTimeout(function() {
+            document.getElementById("message").innerHTML = "";
+                
+            }, 10000);
+        }
+    }
+
+
+}
+        
+        
+    </script>
+</body>
+</html>

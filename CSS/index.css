@@ -11,7 +11,9 @@ html {
 }
 
 body {
-    background-color: chocolate;
+    background: url('../Images/images4.jpg') no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 section {
@@ -34,13 +36,20 @@ header {
     position: fixed;
     padding: 10px 20px;
     color: white;
-    z-index: 999;
+    z-index: 888;
 }
 
-header h1 {
+.cName {
     left: 30px;
     position: absolute;
     font-family: sans-serif;
+    color: white;
+    
+}
+
+.cName span {
+    color: yellowgreen;
+    
 }
 
 header span {
@@ -74,6 +83,11 @@ header a:hover span {
     top: 15px;
 }
 
+.logo {
+    position: absolute;
+    left: 100px;
+}
+
 #hom {
     font-size: 30px;
     margin: 8px;
@@ -98,7 +112,7 @@ header a:hover span {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 999;
+    z-index: 888;
 }
 
 .links a {
@@ -111,7 +125,7 @@ header a:hover span {
     text-align: center;
     font-size: 20px;
     font-weight: bold;
-    z-index: 999;
+    z-index: 888;
 }
 
 .links span {
@@ -145,7 +159,7 @@ header a:hover span {
     border: none;
     border-bottom: 1px solid green;
     font-size: 20px;
-    color: crimson;
+    color: white;
 }
 
 .signUp input:focus, .signIn input:focus {
@@ -194,6 +208,16 @@ header a:hover span {
     margin-left: 20%;
 }
 
+#pps, #pps1, #pps2 {
+    cursor: pointer;
+    margin-left: -50px;
+    font-size: 15px;
+    display: none;
+    
+}
+
+
+
 .signUp .sign:hover, .signIn .sign:hover {
     transform: scale(1.2);
     background: transparent;
@@ -223,6 +247,7 @@ header a:hover span {
 #home {
     background: url('../Images/JuneMontage (13)-1.jpg') no-repeat;
     background-size: cover;
+    background-attachment: fixed;
     width: 100%;
     height: 50vh;
     padding: 200px 0px;
@@ -302,10 +327,11 @@ header a:hover span {
 
 #about {
     height: 330vh;
-    background: url('../images/about.jpg') no-repeat;
+     background: rgba(0, 0, 0, 0.63) ; /*url('../images/about.jpg') no-repeat; */
     background-size: cover;
+    background-attachment: fixed;
+    color: #fff;    
     font-size: 20px;
-    color: #000000;
 }
 
 #about p {
@@ -362,8 +388,9 @@ header a:hover span {
     padding: 40px 30px;
     margin-bottom: 15px;
     font-size: 30px;
-    background: url('../Images/royal-golden-floral-background_Mk03532__thumb.jpg') no-repeat;
+    background: url('../Images/image1.png') no-repeat;
     background-size: cover;
+    background-attachment: fixed;
     color: #ffffff;
     font-weight: bold;
     border: 3px dashed #ffffff56;
@@ -371,44 +398,188 @@ header a:hover span {
     float: left;
     width: 500px;
     height: 200px;
+    font-weight: bold;
+    transition: all 0.5s ease-in-out;
 }
+
+#levels fieldset:hover {
+    color: #d6a501;
+    transform: scale(1.05);
+    /* transform: translateX(14px);     */
+    font-weight: 700;
+}
+
+
 
 /* Contact Section */
 
 #contact {
-    background: #000000aa;
-    text-align: center;
-    color: #dc7514;
-}
-
-#contact h1 {
-    text-align: center;
-    font-size: 30px;
-    text-transform: uppercase;
-    padding: 15px;
-}
-
-#contact div {
+    background: url('../Images/gi.png') no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
     display: flex;
+    color: #fff;
+}
+
+#contact h3 {
+    color: #14dc1b;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-family: Pacifico;
+    text-align: center;
+}
+
+#contact #contacts {
+    margin-left: 90px;
+    margin-top: 50px;
+    /* text-align: center; */
+}
+
+.fac {
+    margin-left: 90px;
+    margin-top: 50px;
+    color: black;
+    background: #ffffff87;
+    padding: 20px;
+    background-attachment: fixed;
+    transition: 0.5s;
+    border-radius: 20px;    
+}
+
+.fac div {
+    position: relative;
+    box-shadow: 1px 2px 4px #00000080;
+    margin: 10px;
+    background: #ffffff95;
+    padding: 10px;
+    border-radius: 10px;
+    transition: 0.5s;
+    
+}
+
+.open, .close {
+    cursor: pointer;
+    float: right;
+    padding-left: 20px;
+    transition: 0.5s;
+    
+}
+
+.open.active {
+    display: none;
+}
+
+.answer {
+    width: 400px;
+    display: none;
+    position: sticky;
+    transition: 0.5s;
+}
+
+.answer.active {
+    width: 400px;
+    display: block;
+    position: sticky;
+    transition: 0.5s;
+}
+
+#contacts div, .ooooo div {
+    margin: 15px;
+    transition: 0.5s;
+    
+    
+}
+
+.ooooo {
+    margin-top: 150px;
+    margin-left: 90px;
+}
+
+#contacts div:hover, .ooooo div:hover {
+    transform: translateX(30px);
+    transition: 0.5s;
+    
+}
+
+#contacts a, .ooooo a {
+    text-decoration: none;
+    display: block;
+    font-size: 20px;
+    color: #ccc;
+}
+
+#contacts a i, .ooooo a i {
+    padding: 10px;
+}
+
+#contacts a:hover i, .ooooo a:hover i {
+    color: #ccc;
+}
+
+#contacts a:hover, .ooooo a:hover {
+    transform: translate(10px);
+    color: yellowgreen;
+
+}
+
+#web {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 999;
+    background-color: #000000bb;
+    background-attachment: fixed;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    top: 0;
+   
+    
+}
+
+#web.close {
+    opacity: 0;
+    width: 0px;
+    height: 0px;
+}
+
+#web div {
+    background: #8a4c00;
+    border-radius: 20px;
+    padding: 25px 30px;
+    width: 50%;
+    height: 30%;
+}
+
+#web #choose {
+    display: inline-flex;
     justify-content: center;
 }
 
-#contact div a {
-    padding: 30px;
-    font-size: 40px;
+#choose a {
+    padding: 20px 30px;
     text-decoration: none;
-    width: 100%;
-    text-align: center;
-    transition: all 0.5s ease-in-out;
+    border-radius: 10px;
+    margin: 0px 5px;
+    display: inline;
+     width: 70%;
+    height: 10%;
+
 }
 
-#contact div a i {
-    padding-right: 20px;
+#choose a:hover {
+    /* background: bisque; */
+    /* color: #000; */
+    opacity: 70%;
+
 }
 
-#contact div a:hover {
-    color: #dc7514;
-    background: bisque;
+#Ogreen{
+    background-color: green;
+}
+
+#Ored{
+    background-color: red;
 }
 
 /* Take Away */
@@ -488,14 +659,15 @@ header a:hover span {
     background: inherit;
     transition: all 0.5s ease-in-out;
     color: inherit;
-    overflow: auto;
+    overflow: auto; 
     -webkit-overflow-scrolling: touch;
-    background: rgba(0, 0, 0, 0.467);
+    background: #00000077;
 }
 
 #forgottenPass.close {
     width: 0px;
     height: 0px;
+    opacity: 0;
     transition: all 0.5s ease-in-out;
 }
 
@@ -507,7 +679,9 @@ header a:hover span {
     position: relative;
     box-shadow: 1px 2px 4px #eeeded80;
     margin: 10px;
-    background: black;
+    background: rgba(0, 0, 0, 0.487);
+    background-attachment: fixed;
+    background-size: cover;
     padding: 10px;
     border-radius: 10px;
     color: #fff;
@@ -714,13 +888,6 @@ header a:hover span {
     #accounts {
         width: 100%;
         left: 0;
-    }
-    #contact {
-        color: #47fa2c;
-    }
-    #contact div a:hover {
-        color: #14dc1b;
-        background: bisque;
     }
 }
 

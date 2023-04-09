@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="password" id="chos">
+    <button id="cho">open</button>
+
+    <script>
+    var passEl = document.getElementById("cho");
+    var passEl1 = document.getElementById("chos");
+    
+    passEl.onclick = function () {
+        if (passEl1.type == "password") {
+            passEl1.type = "text";
+        } else {
+            passEl1.type = "password";
+        }
+    };
+    </script>
+</body>
+</html>

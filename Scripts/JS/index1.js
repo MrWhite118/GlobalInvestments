@@ -38,7 +38,7 @@ var investmentsEl = document.getElementById("investments");
 var conInvestEl = document.getElementById("conInvest");
 var backInvestEl = document.getElementById("backInvest");
 var fullNameEl = document.querySelectorAll(".fullName");
-var currentLevelRl = document.querySelectorAll(".currentLevel");
+var currentLevelEl = document.getElementsByClassName("currentLevel");
 var amntTocontributeEl = document.querySelectorAll(".amntTocontribute");
 var amntToReceiveEl = document.querySelectorAll(".amntToReceive");
 var recDurationEl = document.querySelectorAll(".recDuration");
@@ -58,17 +58,10 @@ var bckUserNameEl = document.getElementById("bckUserName");
 var changeUserNameEl = document.getElementById("changeUserName");
 var changeEmailAddressEl = document.getElementById("changeEmailAddress");
 var passChangeEl = document.getElementById("passChange");
-var codeEl = document.getElementById("code");
+var code1El = document.getElementById("code1");
 var bckCodeEl = document.getElementById("bckCode");
 var fogPassEl = document.getElementById("fogPass");
-
-
-
-
-
-
-
-
+var investLEl = document.getElementById("investL");
 var remPassEl = document.getElementById("remPass");
 
 
@@ -273,5 +266,10 @@ closeEl.onclick = function () {
     fMessageEl.style.display = "none";
     messageEl.setAttribute('class', "close");
 };
+
+function logout() {
+    ajax_request.open('logout.php');
+    
+}
 
 

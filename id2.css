@@ -208,6 +208,9 @@ body {
     border: none;
     font-size: 18px;
     transition: 0.9s;
+    position: fixed;
+    margin-top: -20px;
+    margin-left: -80px;
 }
 
 .b:hover {
@@ -225,6 +228,38 @@ body {
     display: none;
 }
 
+#error {
+    padding: 25px;
+    letter-spacing: 2px;
+    width: 80%;
+    height: 80%;
+    background: brown;
+    position: fixed;
+    border-radius: 20px;
+    color: #fff;
+    overflow: auto;
+    display: none;
+    transition: 5s;
+    transform: rotateY(680deg);
+}
+
+#error h3 {
+    text-align: center;
+    padding: 15px;
+}
+
+#error ul {
+    padding: 20px;
+}
+
+#error ul li {
+    padding: 10px;
+}
+
+#error a {
+    color: yellowgreen;
+}
+
 
 @media (max-width: 600px) {
     body {
@@ -232,5 +267,18 @@ body {
         justify-content: left;
         padding: 10px;
 
+    }
+    .b {
+        margin-left: 100px;
+    }
+}
+
+@media (max-width: 420px) {
+    div {
+        display: none;
+
+    }
+    #error {
+        display: block;
     }
 }

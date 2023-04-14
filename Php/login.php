@@ -20,7 +20,7 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
 
     $uname = validate($_POST['uname']);
 
-    $pass = validate($_POST['password']);
+    $pass = validate(sha1($_POST['password']));
 
     if (empty($uname)) {
 
@@ -36,7 +36,7 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
 
     }else{
 
-        $sql = "SELECT * FROM users WHERE user_name='$uname' AND password='$pass'";
+        $sql = "SELECT * FROM users WHERE UserName='$uname' AND Password='$pass'";
 
         $result = mysqli_query($conn, $sql);
 
@@ -44,11 +44,11 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
 
             $row = mysqli_fetch_assoc($result);
 
-            if ($row['user_name'] === $uname && $row['password'] === $pass) {
+            if ($row['UserName'] === $uname && $row['Password'] === $pass) {
 
                 // echo "Logged in!";
 
-                // $_SESSION['user_name'] = $row['user_name'];
+                // $_SESSION['First Name'] = $row['First Name'];
 
                 // $_SESSION['name'] = $row['name'];
 

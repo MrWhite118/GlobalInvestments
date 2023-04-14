@@ -44,12 +44,10 @@ header {
     position: absolute;
     font-family: sans-serif;
     color: white;
-    
 }
 
 .cName span {
     color: yellowgreen;
-    
 }
 
 header span {
@@ -213,9 +211,7 @@ header a:hover span {
     margin-left: -50px;
     font-size: 15px;
     display: none;
-    
 }
-
 
 
 .signUp .sign:hover, .signIn .sign:hover {
@@ -327,10 +323,11 @@ header a:hover span {
 
 #about {
     height: 330vh;
-     background: rgba(0, 0, 0, 0.63) ; /*url('../images/about.jpg') no-repeat; */
+    background: rgba(0, 0, 0, 0.63);
+    /*url('../images/about.jpg') no-repeat; */
     background-size: cover;
     background-attachment: fixed;
-    color: #fff;    
+    color: #fff;
     font-size: 20px;
 }
 
@@ -409,8 +406,6 @@ header a:hover span {
     font-weight: 700;
 }
 
-
-
 /* Contact Section */
 
 #contact {
@@ -443,7 +438,7 @@ header a:hover span {
     padding: 20px;
     background-attachment: fixed;
     transition: 0.5s;
-    border-radius: 20px;    
+    border-radius: 20px;
 }
 
 .fac div {
@@ -454,15 +449,13 @@ header a:hover span {
     padding: 10px;
     border-radius: 10px;
     transition: 0.5s;
-    
 }
 
-.open, .close {
+.open, .close  {
     cursor: pointer;
     float: right;
     padding-left: 20px;
     transition: 0.5s;
-    
 }
 
 .open.active {
@@ -486,8 +479,6 @@ header a:hover span {
 #contacts div, .ooooo div {
     margin: 15px;
     transition: 0.5s;
-    
-    
 }
 
 .ooooo {
@@ -498,7 +489,6 @@ header a:hover span {
 #contacts div:hover, .ooooo div:hover {
     transform: translateX(30px);
     transition: 0.5s;
-    
 }
 
 #contacts a, .ooooo a {
@@ -519,7 +509,6 @@ header a:hover span {
 #contacts a:hover, .ooooo a:hover {
     transform: translate(10px);
     color: yellowgreen;
-
 }
 
 #web {
@@ -533,11 +522,9 @@ header a:hover span {
     display: flex;
     justify-content: center;
     top: 0;
-   
-    
 }
 
-#web.close {
+#web.close  {
     opacity: 0;
     width: 0px;
     height: 0px;
@@ -562,23 +549,21 @@ header a:hover span {
     border-radius: 10px;
     margin: 0px 5px;
     display: inline;
-     width: 70%;
+    width: 70%;
     height: 10%;
-
 }
 
 #choose a:hover {
     /* background: bisque; */
     /* color: #000; */
     opacity: 70%;
-
 }
 
-#Ogreen{
+#Ogreen {
     background-color: green;
 }
 
-#Ored{
+#Ored {
     background-color: red;
 }
 
@@ -659,19 +644,19 @@ header a:hover span {
     background: inherit;
     transition: all 0.5s ease-in-out;
     color: inherit;
-    overflow: auto; 
+    overflow: auto;
     -webkit-overflow-scrolling: touch;
     background: #00000077;
 }
 
-#forgottenPass.close {
+#forgottenPass.close  {
     width: 0px;
     height: 0px;
     opacity: 0;
     transition: all 0.5s ease-in-out;
 }
 
-#forgottenPass.close aside {
+#forgottenPass.close  aside {
     display: none;
 }
 

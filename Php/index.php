@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,6 +16,13 @@
 </head>
 
 <body>
+
+<div>
+    <!-- <?php
+    
+
+?> -->
+</div>
     <header>
         <div id="b">
             <span class="fa fa-bars" id="hom" title="Navigations"></span>
@@ -55,7 +64,7 @@
             <div class="closeb">
                 <span class="fa fa-times" onclick="cPopUp()"></span>
             </div>
-            <form id="users" method="POST">
+            <form id="users" method="POST" action="login.php">
                 <span id="message"></span>
                 <fieldset>
                     <legend>Create an Account</legend>
@@ -81,13 +90,13 @@
                         <input type="text" placeholder="Input prefered username here..." class="form-control form_data" name="uname" id="uName" required>
                     </label>
                     <label for="pass">Password:
-                        <input type="password" placeholder="Input a unique password here..." class="form-control form_data pps" name="password" id="pass" required> <span class="fas fa-eye" id="pps"></span>
+                        <input type="password" placeholder="Input password here..." class="form-control form_data pps" name="password" id="pass" required> <span class="fas fa-eye" id="pps"></span>
                     </label>
                     <label for="cpass">Confirm Password:
                         <input type="password" placeholder="Re-write password here..." class="form-control form_data pps" name="cPass" id="cPass"> <span class="fas fa-eye" id="pps1"></span>
                     </label>
                     <label for="submit">
-                        <input type="button" name="signUp" value="Sign Up" class="sign" onclick="save_data(); return false;" id="submita">
+                        <input type="submit" name="signUp" value="Sign Up" class="sign" id="submita">
                     </label>
                     <p>Already have an Account?
                         <a href="#" onclick="signIn()">Sign In</a>
@@ -107,13 +116,13 @@
 
                 <?php } ?>
                     <legend>Sign In</legend>
-                    <label for="uname">Usernme:
-                        <input type="text" name="uname" placeholder="Input your username here..." required>
+                    <label for="uname">Username:
+                        <input type="text" name="uname" placeholder="Input your username here..." required id="username">
                     </label>
                     <label for="pass">Password:
                         <input type="password" name="password" placeholder="Input your password here..." required id="logPass"> <span class="fas fa-eye" id="pps2"></span>
                     </label>
-                    <input type="submit" value="Sign In" class="sign">
+                    <input type="submit" value="Sign In" class="sign" id="login">
                     </label>
                     <p>
                         <a href="#" id="fPW">Forgotten Password?</a>
@@ -399,6 +408,150 @@
 
     <script src="../Scripts/JS/index.js"></script>
     <script src="../Scripts/JS/typ.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+    // $(function(){
+    //     $("#submita").click(function(e){
+
+           
+  
+
+
+    //             // e.preventDefault();
+
+               
+                
+    //         }
+    //     });
+    // });
+
+    $('document').ready(function(){
+ var username_state = false;
+ var email_state = false;
+ $('#uName').on('input', function(){
+  var username = $('#uName').val();
+  if (username == '') {
+  	username_state = false;
+  	return;
+  }
+  $.ajax({
+    url: 'process.php',
+    type: 'post',
+    data: {
+    	'username_check' : 1,
+    	'username' : username,
+    },
+    success: function(response){
+      if (response == 'taken' ) {
+      	username_state = false;
+      	$('#uName').parent().addClass("form_error");
+      	$('#uName').siblings("span").text('Sorry... Username already taken');
+      }else if (response == 'not_taken') {
+      	username_state = true;
+      	$('#uName').parent().addClass("form_success");
+      	$('#uName').siblings("span").text('Username available');
+      }
+    }
+  });
+ });		
+  $('#email').on('input', function(){
+ 	var email = $('#email').val();
+ 	if (email == '') {
+ 		email_state = false;
+ 		return;
+ 	}
+ 	$.ajax({
+      url: 'process.php',
+      type: 'post',
+      data: {
+      	'email_check' : 1,
+      	'email' : email,
+      },
+      success: function(response){
+      	if (response == 'taken' ) {
+          email_state = false;
+          $('#email').parent().addClass("form_error");
+          $('#email').siblings("span").text('Sorry... Email already taken');
+      	}else if (response == 'not_taken') {
+      	  email_state = true;
+      	  $('#email').parent().removeClass();
+      	  $('#email').parent().addClass("form_success");
+      	  $('#email').siblings("span").text('Email available');
+      	}
+      }
+ 	});
+ });
+
+ $('#submita').on('click', function(){
+     
+     var valid = this.form.checkValidity();
+            if(valid){
+                var firstname       = $('#fName').val();
+                var middlename      = $('#mName').val();
+                var lastname        = $('#lName').val();
+                var phonenumber     = $('#pNo').val();
+                var email           = $('#email').val();
+                var refferal        = $('#reff').val();
+                var username        = $('#uName').val();
+                var password        = $('#pass').val();
+ 	if (username_state == false || email_state == false) {
+	  $('#error_msg').text('Fix the errors in the form first');
+	}else{
+      // proceed with form submission
+      $.ajax({
+                    type: 'POST',
+                    url: 'process.php',
+                    data: {fname: firstname,mname: middlename,lname: lastname,pNo: phonenumber,email: email,reff: refferal,uname: username,password: password},
+                    success: function(data){
+                        swal.fire({
+                                title: 'Successful',
+                                text: data,
+                                icon: 'success',
+                                confirmButtonText: 'Continue'
+                          })
+                        //   $("#users").setAttribute('action',"login.php")
+                    },
+                    error: function(data){
+                        swal.fire({
+                                title: 'Error!',
+                                text: data,
+                                icon: 'error',
+                                confirmButtonText: 'Retry'
+                          }) 
+}
+                });
+ 	}
+ });
+});
+
+    // $(function(){
+    //     $('#login').click(function(f){
+    //         var valid2 = this.form.checkValidity();
+
+    //         if(valid2){
+    //             var username = $('#uName').val();
+    //             var password = $('#pass').val();
+    //         }
+
+    //         f.preventDefault();
+
+    //         $.ajax({
+    //             type: 'POST',
+    //             url: 'login1.php',
+    //             data: {uname: username,password: password},
+    //             success: function(data){
+    //                 alert(data);
+    //             },
+    //             error: function(data){
+    //                 alert('error');
+                    
+    //             }
+    //         });
+    //     });
+    // });
+
+    </script>
 
 </body>
 

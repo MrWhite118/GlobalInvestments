@@ -127,7 +127,7 @@ section div.dark {
     transition: all 0.5s ease-in-out;
 }
 
-#message.close #actualMessage {
+#message.close  #actualMessage {
     padding: 0;
     transition: all 0.5s ease-in-out;
 }
@@ -198,7 +198,7 @@ section div.dark {
     transition: all 0.5s ease-in-out;
 }
 
-#withdrawal.close p, #withdrawal.close div, #withdrawal.close span, #withdrawal.close aside, #settings.close p, #settings.close div, #settings.close span, #settings.close aside, #message.close #actualMessage div, #message.close #actualMessage p, #accSettings.close p, #accSettings.close div, #accSettings.close span, #about.close p, #about.close div, #about.close span, #about.close aside, #refer.close aside, #bankAccount.close aside, #investments.close div, #userInfos.close div, #userInfos.close aside, #changeUserName.close aside, #changeEmailAddress.close aside, #passChange.close aside, #changeUserName.close div, #changeEmailAddress.close div, #passChange.close div, #code.close div, #code.close aside {
+#withdrawal.close  p, #withdrawal.close  div, #withdrawal.close  span, #withdrawal.close  aside, #settings.close  p, #settings.close  div, #settings.close  span, #settings.close  aside, #message.close  #actualMessage div, #message.close  #actualMessage p, #accSettings.close  p, #accSettings.close  div, #accSettings.close  span, #about.close  p, #about.close  div, #about.close  span, #about.close  aside, #refer.close  aside, #bankAccount.close  aside, #investments.close  div, #userInfos.close  div, #userInfos.close  aside, #changeUserName.close  aside, #changeEmailAddress.close  aside, #passChange.close  aside, #changeUserName.close  div, #changeEmailAddress.close  div, #passChange.close  div, #code.close  div, #code.close  aside {
     display: none;
 }
 
@@ -260,7 +260,7 @@ section div.dark {
     transition: all 0.5s ease-in-out;
 }
 
-#settings.close, #accSettings.close, #withdrawal.close, #about.close, #refer.close, #contact.close, #bankAccount.close, #investments.close, #userInfos.close, #changeUserName.close, #changeEmailAddress.close, #passChange.close, #code.close {
+#settings.close, #accSettings.close, #withdrawal.close, #about.close, #refer.close, #contact.close, #bankAccount.close, #investments.close , #userInfos.close , #changeUserName.close , #changeEmailAddress.close , #passChange.close , #code.close  {
     width: 0px;
     height: 0px;
     transition: all 0.5s ease-in-out;
@@ -271,7 +271,8 @@ section div.dark {
     right: 20px;
 }
 
-#settings p:hover, aside span:hover, #about p:hover, #refer aside p:hover, #contact aside p:hover, #bankAccount aside p:hover {
+#settings p:hover, #bank aside,
+ aside span:hover, #about p:hover, #refer aside p:hover, #contact aside p:hover, #bankAccount aside p:hover {
     cursor: pointer;
 }
 
@@ -307,6 +308,11 @@ aside {
     transition: all 0.5s ease-in-out;
 }
 
+
+#logOut {
+    text-decoration: none;
+}
+
 #accSettings p {
     color: #555;
     font-size: 20px;
@@ -317,11 +323,13 @@ aside {
     font-size: 20px;
 }
 
-#accSettings aside p i, #about p i, #refer aside p span, #contact aside p span, #bankAccount aside p span, #userInfos aside p span, #changeUserName aside p span, #changeEmailAddress aside p span, #passChange aside p span, #code aside p span, #forgottenPass aside p span {
+#accSettings aside p i, #about p i, #bank aside p span,
+ #refer aside p span, #contact aside p span, #bankAccount aside p span, #userInfos aside p span, #changeUserName aside p span, #changeEmailAddress aside p span, #passChange aside p span, #code aside p span, #forgottenPass aside p span {
     padding-right: 20px;
 }
 
-#accSettings aside p, #about aside p, #refer aside p, #contact aside p, #bankAccount aside p, #userInfos aside p, #changeUserName aside p, #changeEmailAddress aside p, #passChange aside p, #code aside p, #forgottenPass aside p {
+#accSettings aside p, #bank aside p,
+ #about aside p, #refer aside p, #contact aside p, #bankAccount aside p, #userInfos aside p, #changeUserName aside p, #changeEmailAddress aside p, #passChange aside p, #code aside p, #forgottenPass aside p {
     font-size: 22px;
     color: #435750;
     cursor: pointer;
@@ -346,7 +354,8 @@ aside {
     -webkit-overflow-scrolling: touch;
 }
 
-#about aside, #refer aside, #bankAccount aside, #changeUserName aside, #changeEmailAddress aside, #passChange aside, #forgottenPass aside {
+#about aside, #refer aside, #bankAccount aside, #bank aside,
+ #changeUserName aside, #changeEmailAddress aside, #passChange aside, #forgottenPass aside {
     position: fixed;
     top: 0;
     z-index: 9;
@@ -354,7 +363,7 @@ aside {
     width: 100%;
 }
 
-#refer, #contact, #bankAccount, #forgottenPass {
+#refer, #contact, #bankAccount, #forgottenPass, #bank {
     width: 100%;
     height: 100%;
     z-index: 39;
@@ -539,6 +548,36 @@ input#confirmUserChange, input#confirmPassChange, input#confirmEmailChange {
 #codes {
     margin-bottom: 50vh;
     text-align: center;
+}
+
+#bank label {
+    font-size: 20px;
+    color: #555;
+}
+
+#bank input {
+    padding: 10px; 
+    width: 350px;
+    border-radius: 10px;
+    border: 1px dotted gray;
+    float: right;
+    text-transform: uppercase;
+}
+
+#bank input:focus {
+    outline: none;
+}
+
+
+#saveDiv {
+    display: flex;
+    justify-content: center;    
+}
+
+#saveAcc {
+    cursor: pointer;
+    background: #555;
+    color: #fff;
 }
 
 footer a {

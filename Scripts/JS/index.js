@@ -178,8 +178,8 @@ function save_data() {
         ajax_request = new ActiveXObject("Microsoft.XMLHTTP");
     }
 
-    // ajax_request.open('POST', 'something.php', true);
-    // ajax_request.send(form_data);
+    ajax_request.open('POST', 'something.php', true);
+    ajax_request.send(form_data);
 
 
     ajax_request.onreadystatechange = function () {

@@ -4,7 +4,7 @@
 $servername = "localhost";
 $username = "MrWhite18";
 $password = "olaeighteen18";
-$dbname = "test_db";
+$dbname = "users_info";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -20,11 +20,14 @@ $email = $_POST['email'];
 $reff = $_POST['reff'];
 $uname = $_POST['uname'];
 $pass = $_POST['password'];
+// $aFullName = $_POST['aFullName'];
+// $aBankName = $_POST['aBankName'];
+// $aAcctNum = $_POST['aAcctNum'];
 
 
 // if (isset($_POST['fname']) && isset($_POST['mname']) && isset($_POST['ulname']) && isset($_POST['pNo']) && isset($_POST['email']) && isset($_POST['reff']) && isset($_POST['uname']) && isset($_POST['password'])) {
 
-$sql = "INSERT INTO users(`first_name`, `middle_name`, `last_name`, `phone_number`, `email_address`, `referral_code`, `user_name`, `password`)
+$sql = "INSERT INTO users(`First Name`, `Middle Name`, `Last Name`, `Phone Number`, `Email Address`, `Refferal Code`, `UserName`, `Password`)
 VALUES ('$fname', '$mname', '$lname', '$pno', '$email', '$reff','$uname', '$pass')";
 
 if ($conn->query($sql) === TRUE) {
@@ -36,5 +39,6 @@ if ($conn->query($sql) === TRUE) {
 //     echo "Error: " . $sql . "<br>" . $conn->error;
 // }
 
-$conn->close();
+// $conn-> ();
 ?>
+

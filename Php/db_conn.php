@@ -6,7 +6,7 @@ $unmae= "MrWhite18";
 
 $password = "olaeighteen18";
 
-$db_name = "test_db";
+$db_name = "users_info";
 
 $conn = mysqli_connect($sname, $unmae, $password, $db_name);
 

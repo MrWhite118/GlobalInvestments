@@ -16,7 +16,7 @@ if(isset($_SESSION['id'])) {
     $id = (int) $_SESSION['id'];
  $user = getUser($id);
 //  var_dump($user);
-// echo($user['first_name']." ".$user['middle_name']);
+// echo($user['First Name']." ".$user['Middle Name']);
     ?>
 
 
@@ -42,7 +42,7 @@ if(isset($_SESSION['id'])) {
         <div id="acc">
             <span class="fas fa-align-right"></span>
         </div>
-        <h1 id="userrName"><?php echo $user['user_name']; ?></h1>
+        <h1 id="userrName"><?php echo $user['UserName']; ?></h1>
     </header>
     <br>
 
@@ -104,7 +104,7 @@ if(isset($_SESSION['id'])) {
     </section>
 
     <!-- Settings Sections Starts -->
-    <section id="settings" class="close">
+    <section id="settings"  class="close">
         <aside>
             <p id="backSettinge">
                 <span class="fas fa-arrow-left"></span> Me</p>
@@ -144,15 +144,15 @@ if(isset($_SESSION['id'])) {
             </p>
         </div>
         <div>
-            <a href="logout.php">
-            <p id="logOut" onclick="logout()">Log out
+            <a href="logout.php" id="logOut">
+            <p onclick="logout()">Log out
                 <span class="fas fa-sign-out-alt"></span>
             </p>
             </a>
         </div>
     </section>
 
-    <section id="accSettings" class="close">
+    <section id="accSettings"  class="close">
         <aside>
             <p id="backAcc">
                 <i class="fas fa-chevron-left"></i> Account Settings</p>
@@ -189,7 +189,7 @@ if(isset($_SESSION['id'])) {
         </div>
     </section>
 
-    <section id="about" class="close">
+    <section id="about"  class="close">
         <aside>
             <p id="backAbout">
                 <i class="fas fa-chevron-left"></i> About
@@ -201,7 +201,7 @@ if(isset($_SESSION['id'])) {
             <div>
                 <p>Hello
                     <span>
-                        <b class="username"><?php echo $_SESSION['user_name']; ?></b>
+                        <b class="username"><?php echo $_SESSION['UserName']; ?></b>
                     </span>!!</p>
             </div>
             <div>
@@ -243,7 +243,7 @@ if(isset($_SESSION['id'])) {
         </div>
     </section>
 
-    <section id="refer" class="close">
+    <section id="refer"  class="close">
         <aside>
             <p id="backRefer">
                 <span class="fa fa-chevron-left"></span>Earn Money
@@ -299,7 +299,7 @@ if(isset($_SESSION['id'])) {
         </div>
     </section>
 
-    <section id="contact" class="close">
+    <section id="contact"  class="close">
         <aside>
             <p id="bckCus">
                 <span class="fa fa-chevron-left"></span>Customer Service
@@ -343,7 +343,7 @@ if(isset($_SESSION['id'])) {
         </div>
     </section>
 
-    <section id="bankAccount" class="close">
+    <section id="bankAccount"  class="close">
         <aside>
             <p id="backAccount">
                 <span class="fa fa-chevron-left"></span>Add payment option
@@ -351,7 +351,7 @@ if(isset($_SESSION['id'])) {
             </p>
         </aside>
         <div id="addDiv">
-            <button>
+            <button id="addPO">
                 <span class="fas fa-plus"></span> Add payment option
             </button>
 
@@ -359,7 +359,7 @@ if(isset($_SESSION['id'])) {
     </section>
 
 
-    <section id="investments" class="close">
+    <section id="investments"  class="close">
         <aside>
             <span class="fas fa-times" id="backInvest"></span>
         </aside>
@@ -369,7 +369,7 @@ if(isset($_SESSION['id'])) {
             </center>
             <div>
                 <p><b>Contributor's Name:</b>
-                    <span class="fullName"> <?php echo ($user['last_name']." ".$user['first_name']." ".$user['middle_name']); ?></span>
+                    <span class="fullName"> <?php echo ($user['Last Name']." ".$user['First Name']." ".$user['Middle Name']); ?></span>
                 </p>
             </div>
             <div>
@@ -399,7 +399,7 @@ if(isset($_SESSION['id'])) {
 
     </section>
 
-    <section id="userInfos" class="close">
+    <section id="userInfos"  class="close">
         <aside>
             <p id="backUse">
                 <span class="fas fa-chevron-left"></span> User Info
@@ -409,22 +409,22 @@ if(isset($_SESSION['id'])) {
             <h3>About Me</h3>
             <div>
                 <p><b>Full Name:</b>
-                    <span class="fullName"><?php echo ($user['last_name']." ".$user['first_name']." ".$user['middle_name']); ?></span>
+                    <span class="fullName"><?php echo ($user['Last Name']." ".$user['First Name']." ".$user['Middle Name']); ?></span>
                 </p>
             </div>
             <div>
                 <p><b>Username:</b>
-                    <span class="username"><?php echo($user['user_name']) ?></span>
+                    <span class="username"><?php echo($user['First Name']) ?></span>
                 </p>
             </div>
             <div>
                 <p><b>Email Address:</b>
-                    <span class="emailAddress"><a href="mailto:<?php echo($user['email_address']) ?>"><?php echo($user['email_address']) ?></a></span>
+                    <span class="emailAddress"><a href="mailto:<?php echo($user['Email Address']) ?>"><?php echo($user['Email Address']) ?></a></span>
                 </p>
             </div>
             <div>
                 <p><b>Phone Number:</b>
-                    <span class="phoneNumber"><a href="#"><?php echo($user['phone_number']) ?></a></span>
+                    <span class="phoneNumber"><a href="#"><?php echo($user['Phone Number']) ?></a></span>
                 </p>
             </div>
             <div>
@@ -445,7 +445,7 @@ if(isset($_SESSION['id'])) {
         </div>
     </section>
 
-    <section id="passChange" class="close">
+    <section id="passChange"  class="close">
         <aside>
             <p id="bckPssChng">
                 <span class="fas fa-chevron-left"></span> Change Password
@@ -472,7 +472,7 @@ if(isset($_SESSION['id'])) {
         </div>
     </section>
 
-    <section id="changeEmailAddress" class="close">
+    <section id="changeEmailAddress"  class="close">
         <div>
             <aside>
                 <p id="bckEmailAdd">
@@ -496,7 +496,7 @@ if(isset($_SESSION['id'])) {
         </div>
     </section>
 
-    <section id="changeUserName" class="close">
+    <section id="changeUserName"  class="close">
         <div>
             <aside>
                 <p id="bckUserName">
@@ -521,7 +521,7 @@ if(isset($_SESSION['id'])) {
     </section>
 
 
-    <section id="code" class="close">
+    <section id="code"  class="close">
         <aside>
             <p id="bckCode">
                 <span class="fas fa-chevron-left"></span> Code
@@ -547,7 +547,52 @@ if(isset($_SESSION['id'])) {
 
     </section>
 
-
+<section id="bank">
+<aside>
+            <p id="bckDet">
+                <span class="fas fa-chevron-left"></span> Account Details
+            </p>
+        </aside><br>
+        <br>
+        <br>
+   <form action="">
+        <div>
+        <label for="fullname">
+            <b>Account Holder's Name:</b> <input type="text" placeholder="full name..." required name="aFullName">
+        </label>
+        </div>
+        <div>
+        <label for="bankName">
+            <b>Bank Name:</b> <input type="text" list="banks" placeholder="Choose Bank.." required name="aBankName">
+            <datalist id="banks">
+                <option value="Access Bank">Access Bank</option>
+                <option value="ALAT by WEMA">ALAT by WEMA</option>
+                <option value="Fidelity Bank">Fidelity Bank</option>
+                <option value="First Bank of Nigeria">First Bank of Nigeria</option>
+                <option value="First City Monument Bank">First City Monument Bank</option>
+                <option value="Guaranty Trust Bank">Guaranty Trust Bank</option>
+                <option value="Kuda Bank">Kuda Bank</option>
+                <option value="Opay Bank">Opay Bank</option>
+                <option value="Palmpay Bank">Palmpay Bank</option>
+                <option value="Polaris Bank">Polaris Bank</option>
+                <option value="Sterling Bank">	Sterling Bank</option>
+                <option value="United Bank For Africa">United Bank For Africa</option>
+                <option value="Union Bank of Nigeria">Union Bank of Nigeria</option>
+                <option value="Wema Bank">Wema Bank</option>
+                <option value="Zenith Bank">Zenith Bank</option>
+            </datalist>
+        </label>
+        </div>
+        <div>
+        <label for="acctnumber">
+            <b>Account Number:</b> <input type="text" placeholder="account number..." required name="aAcctNum">
+        </label>
+        </div>
+        <div id="saveDiv">
+            <input type="submit" value="Save" id="saveAcc" onclick="save_data(); return false;">
+        </div>
+   </form>
+</section>
 
     <!-- Transaction Section Starts -->
     <section id="transactions">
@@ -560,7 +605,7 @@ if(isset($_SESSION['id'])) {
     </section>
 
     <!-- Witdrawal Section Starts -->
-    <section id="withdrawal" class="close">
+    <section id="withdrawal"  class="close">
         <div>
             <span class="fas fa-times" id="closeWith"></span>
 

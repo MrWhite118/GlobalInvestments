@@ -58,12 +58,24 @@ var bckUserNameEl = document.getElementById("bckUserName");
 var changeUserNameEl = document.getElementById("changeUserName");
 var changeEmailAddressEl = document.getElementById("changeEmailAddress");
 var passChangeEl = document.getElementById("passChange");
-var code1El = document.getElementById("code1");
+var codeEl = document.getElementById("code");
 var bckCodeEl = document.getElementById("bckCode");
 var fogPassEl = document.getElementById("fogPass");
 var investLEl = document.getElementById("investL");
 var remPassEl = document.getElementById("remPass");
+var bankEl = document.getElementById("bank");
+var bckDetEl = document.getElementById("bckDet");
+var addPo = document.getElementById("addPO");
 
+$("#bank").hide(50);
+addPo.onclick = function () {
+   $("#bank").show(1500);
+    
+};
+
+bckDetEl.onclick = function () {
+   $("#bank").hide(1500);
+};
 
 
 
@@ -207,7 +219,7 @@ backAccEl.onclick = function () {
 };
 
 
-closeWith.onclick = function () {
+ closeWith.onclick = function () {
     withdrawalEl.setAttribute('class', "close");
 
 };
@@ -248,6 +260,48 @@ onDEl.onclick = function () {
     while (ints < divEl.length) {
         divEl[ints].classList.remove("dark");
         ints++;
+    }function save_data() {
+        var form_element = document.getElementsByClassName("form_data");
+        var form_data = new FormData();
+        for (let count = 0; count < form_element.length; count++) {
+            form_data.append(form_element[count].name, form_element[count].value);
+        }
+    
+        document.getElementById("submita").disabled = true;
+    
+        var ajax_request;
+    
+    
+    
+        if (window.XMLHttpRequest) {
+            ajax_request = new XMLHttpRequest();
+    
+        } else if (window.ActiveXObject) {
+            ajax_request = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+    
+        // ajax_request.open('POST', 'something.php', true);
+        // ajax_request.send(form_data);
+    
+    
+        ajax_request.onreadystatechange = function () {
+            if (ajax_request.readyState === 4 && ajax_request.status == 200) {
+                console.log("yes");
+                console.log(ajax_request.status);
+    
+    
+                document.getElementById("submita").disabled = false;
+                document.getElementById("users").reset();
+                document.getElementById("message").innerHTML = ajax_request.responseText;
+    
+                setTimeout(function () {
+                    document.getElementById("message").innerHTML = "";
+    
+                }, 10000);
+            }
+        }
+    
+    
     }
     int = 0;
 };
@@ -261,7 +315,7 @@ openEl.onclick = function () {
 
 };
 
-closeEl.onclick = function () {
+ closeEl.onclick = function () {
     sMessageEl.style.display = "block";
     fMessageEl.style.display = "none";
     messageEl.setAttribute('class', "close");

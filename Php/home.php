@@ -17,6 +17,8 @@ if(isset($_SESSION['id'])) {
  $user = getUser($id);
 //  var_dump($user);
 // echo($user['First Name']." ".$user['Middle Name']);
+
+
     ?>
 
 
@@ -452,17 +454,17 @@ if(isset($_SESSION['id'])) {
             </p>
         </aside>
         <div id="passTop">
-            <form action="#">
+            <form action="" method="POST">
                 <div>
                     <label for="currentPassword">
                         Input Current Password:
-                        <input type="password" id="currentPassword" placeholder="Current Password" required>
+                        <input type="password" name="password" id="currentPassword" placeholder="Current Password" required> <span class="fas fa-eye" id="pps"></span>
                     </label>
                 </div>
                 <div>
                     <label for="newPassword">
                         Input New Password:
-                        <input type="password" id="newPassword" placeholder="New Password" required>
+                        <input type="password" name="newPass" id="newPassword" placeholder="New Password" required> <span class="fas fa-eye" id="pps1"></span>
                     </label>
                 </div>
                 <div>
@@ -484,7 +486,7 @@ if(isset($_SESSION['id'])) {
                     <div>
                         <label for="newEmail">
                             Input New Email:
-                            <input type="password" id="newEmail" placeholder="New Email..." required>
+                            <input type="email" id="newEmail" placeholder="New Email..." required>
                         </label>
                     </div>
 
@@ -633,8 +635,40 @@ if(isset($_SESSION['id'])) {
     </footer>
 
     <script src="../Scripts/JS/index1.js"></script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>    
+    <script>
+ $('#confirmPassChange').on('click', function(e){
+     var cPass = $('#currentPassword').val();
+     var newPass = $('#newPassword').val();
+ 
+  e.preventDefault();
+  
+  $.ajax({
+                    type: 'POST',
+                    url: 'update.php',
+                    data: {password: cPass,newPass: newPass},
+                    success: function(data){
+                        swal.fire({
+                                title: 'Mystery!',
+                                text: data,
+                                icon: 'question',
+                                confirmButtonText: 'Continue'
+                          }) 
+                    },
+                    error: function(data){
+                        swal.fire({
+                                title: 'Error!',
+                                text: data,
+                                icon: 'error',
+                                confirmButtonText: 'Retry'
+                          }) 
+                    }
 
+                    });
+ });
+    
+    </script>
+</body>
 </html>
  <?php
 }

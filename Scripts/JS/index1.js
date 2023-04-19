@@ -66,6 +66,60 @@ var remPassEl = document.getElementById("remPass");
 var bankEl = document.getElementById("bank");
 var bckDetEl = document.getElementById("bckDet");
 var addPo = document.getElementById("addPO");
+var ppsEl = document.getElementById("pps");
+var ppsEl1 = document.getElementById("pps1");
+var passEl = document.getElementById("currentPassword");
+var logPassEl = document.getElementById("newPassword");
+
+
+ppsEl.style.display = "none";
+ppsEl1.style.display = "none";
+
+passEl.oninput = function () {
+
+    if (passEl.value !== "") {
+        ppsEl.style.display = "inline";
+        ppsEl.onclick = function () {
+            if (passEl.type == "password") {
+                passEl.type = "text";
+                ppsEl.setAttribute('class', "fas fa-eye-slash");
+
+            } else {
+                passEl.type = "password";
+                ppsEl.setAttribute('class', "fas fa-eye");
+
+
+            }
+
+        };
+    } else {
+        ppsEl.style.display = "none";
+    }
+
+};
+
+
+logPassEl.oninput = function () {
+
+    if (logPassEl.value !== "") {
+        ppsEl1.style.display = "inline";
+        ppsEl1.onclick = function () {
+            if (logPassEl.type == "password") {
+                logPassEl.type = "text";
+                ppsEl1.setAttribute('class', "fas fa-eye-slash");
+
+            } else {
+                logPassEl.type = "password";
+                ppsEl1.setAttribute('class', "fas fa-eye");
+
+            }
+
+        };
+    } else {
+        ppsEl1.style.display = "none";
+    }
+
+};
 
 $("#bank").hide(50);
 addPo.onclick = function () {

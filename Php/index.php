@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -64,7 +63,7 @@
             <div class="closeb">
                 <span class="fa fa-times" onclick="cPopUp()"></span>
             </div>
-            <form id="users" method="POST" action="login.php">
+            <form id="users" method="POST">
                 <span id="message"></span>
                 <fieldset>
                     <legend>Create an Account</legend>
@@ -79,15 +78,18 @@
                     </label>
                     <label for="number">Phone Number:
                         <input type="number" placeholder="Input phone No here..." class="form-control form_data" name="pNo" id="pNo" required>
+                        <span></span>                        
                     </label>
                     <label for="email">Email Address:
                         <input type="email" placeholder="Enter Email here..." class="form-control form_data" name="email" id="email" required>
+                        <span id="e_taken"></span>                        
                     </label>
                     <label for="ref">Referral code:
                         <input type="text" placeholder="Enter referal code here..." class="form-control form_data" name="reff" id="reff">
                     </label>
                     <label for="uname">Username:
                         <input type="text" placeholder="Input prefered username here..." class="form-control form_data" name="uname" id="uName" required>
+                        <span id="u_taken"></span>                        
                     </label>
                     <label for="pass">Password:
                         <input type="password" placeholder="Input password here..." class="form-control form_data pps" name="password" id="pass" required> <span class="fas fa-eye" id="pps"></span>
@@ -376,21 +378,21 @@
             </aside>
             <h1>Find your Account</h1>
             <div>
-                <form action="#">
+                <form method="POST">
                     <div id="numPart">
-                        <p>Enter your phone number</p>
+                        <p>Enter your Phone Number</p>
                         <div>
-                            <input type="number" placeholder="Enter phone No:..." required>
+                            <input type="number" id="findNumber" name="findNumber" placeholder="Enter phone No:..." required>
                         </div>
                     </div>
                     <div id="emailPart">
                         <p>Enter your Email Address</p>
                         <div>
-                            <input type="email" placeholder="Enter Email Address:..." required>
+                            <input type="email" name="findEmail" id="findEmail" placeholder="Enter Email Address:..." required>
                         </div>
                     </div>
                     <div>
-                        <input type="submit" value="Search" id="srchAccount">
+                        <input type="submit" name="srchAccount" value="Search" id="srchAccount">
                     </div>
                     <div class="slinks" id="byEmail">
                         <a href="#" id="sbyEmail">Search by your Email instead</a>
@@ -411,79 +413,9 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script>
-    // $(function(){
-    //     $("#submita").click(function(e){
-
-           
-  
-
-
-    //             // e.preventDefault();
-
-               
-                
-    //         }
-    //     });
-    // });
 
     $('document').ready(function(){
- var username_state = false;
- var email_state = false;
- $('#uName').on('input', function(){
-  var username = $('#uName').val();
-  if (username == '') {
-  	username_state = false;
-  	return;
-  }
-  $.ajax({
-    url: 'process.php',
-    type: 'post',
-    data: {
-    	'username_check' : 1,
-    	'username' : username,
-    },
-    success: function(response){
-      if (response == 'taken' ) {
-      	username_state = false;
-      	$('#uName').parent().addClass("form_error");
-      	$('#uName').siblings("span").text('Sorry... Username already taken');
-      }else if (response == 'not_taken') {
-      	username_state = true;
-      	$('#uName').parent().addClass("form_success");
-      	$('#uName').siblings("span").text('Username available');
-      }
-    }
-  });
- });		
-  $('#email').on('input', function(){
- 	var email = $('#email').val();
- 	if (email == '') {
- 		email_state = false;
- 		return;
- 	}
- 	$.ajax({
-      url: 'process.php',
-      type: 'post',
-      data: {
-      	'email_check' : 1,
-      	'email' : email,
-      },
-      success: function(response){
-      	if (response == 'taken' ) {
-          email_state = false;
-          $('#email').parent().addClass("form_error");
-          $('#email').siblings("span").text('Sorry... Email already taken');
-      	}else if (response == 'not_taken') {
-      	  email_state = true;
-      	  $('#email').parent().removeClass();
-      	  $('#email').parent().addClass("form_success");
-      	  $('#email').siblings("span").text('Email available');
-      	}
-      }
- 	});
- });
-
- $('#submita').on('click', function(){
+ $('#submita').on('click', function(e){
      
      var valid = this.form.checkValidity();
             if(valid){
@@ -495,22 +427,20 @@
                 var refferal        = $('#reff').val();
                 var username        = $('#uName').val();
                 var password        = $('#pass').val();
- 	if (username_state == false || email_state == false) {
-	  $('#error_msg').text('Fix the errors in the form first');
-	}else{
-      // proceed with form submission
+ e.preventDefault();
       $.ajax({
                     type: 'POST',
                     url: 'process.php',
-                    data: {fname: firstname,mname: middlename,lname: lastname,pNo: phonenumber,email: email,reff: refferal,uname: username,password: password},
+                    data: {fname: firstname,mname: middlename,
+                    lname: lastname,pNo: phonenumber,email: email,
+                    reff: refferal,uname: username,password: password},
                     success: function(data){
-                        swal.fire({
-                                title: 'Successful',
+                            swal.fire({
+                                title: 'Mystery!',
                                 text: data,
-                                icon: 'success',
+                                icon: 'question',
                                 confirmButtonText: 'Continue'
-                          })
-                        //   $("#users").setAttribute('action',"login.php")
+                          }) 
                     },
                     error: function(data){
                         swal.fire({
@@ -521,35 +451,36 @@
                           }) 
 }
                 });
- 	}
+            }
+ });
+ $('#srchAccount').on('click', function(f){
+                var phonenumber     = $('#findNumber').val();
+                var email           = $('#findEmail').val();
+ f.preventDefault();
+      $.ajax({
+                    type: 'POST',
+                    url: 'forgot.php',
+                    data: {findNumber: phonenumber,findEmail: email},
+                    success: function(data){
+                            swal.fire({
+                                title: 'Mystery!',
+                                text: data,
+                                icon: 'question',
+                                confirmButtonText: 'Continue'
+                          }) 
+                    },
+                    error: function(data){
+                        swal.fire({
+                                title: 'Error!',
+                                text: data,
+                                icon: 'error',
+                                confirmButtonText: 'Retry'
+                          }) 
+}
+                });
  });
 });
 
-    // $(function(){
-    //     $('#login').click(function(f){
-    //         var valid2 = this.form.checkValidity();
-
-    //         if(valid2){
-    //             var username = $('#uName').val();
-    //             var password = $('#pass').val();
-    //         }
-
-    //         f.preventDefault();
-
-    //         $.ajax({
-    //             type: 'POST',
-    //             url: 'login1.php',
-    //             data: {uname: username,password: password},
-    //             success: function(data){
-    //                 alert(data);
-    //             },
-    //             error: function(data){
-    //                 alert('error');
-                    
-    //             }
-    //         });
-    //     });
-    // });
 
     </script>
 

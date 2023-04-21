@@ -12,7 +12,7 @@
 
 <body>
     <input type="checkbox" id="check">
-    <div class="container front">
+    <div class="container" id="front">
         <div class="top">
             <img src="./Globaltech Institute Logo2.png" alt="" width="350">
         </div>
@@ -21,7 +21,7 @@
                 <img src="./id.png" alt="id" width="150px">
             </div>
             <div class="name">
-                <h3>OKE</h3>
+                <h2>OKE</h2>
                 <h3>ABDULLATEEF</h3>
                 <h3>ABDULRAFIU</h3>
             </div>
@@ -42,10 +42,10 @@
         </div>
     </div>
 
-    <div class="container back">
+    <div class="container" id="back">
       <div class="body back">
         <h5>This card belongs to</h5>
-        <img width="350px" src="./Globaltech Institute Logo2.png" alt="glb">
+        <img width="250px" src="./Globaltech Institute Logo2.png" alt="glb">
         <p class="f">If found please return to any of these address</p>
         <div class="add">
             <p>1 Lagos Road, Ikorodu</p>
@@ -59,10 +59,10 @@
     </div>
     <div class="button">
         <label for="check">
-                <p class="b" id="back">View back</p>
+                <p class="b" id="backs">View Both Sides</p>
         </label>
         <label for="check">
-                <p class="b" id="front">View front</p>
+                <p class="b" id="fronts">View Front Only</p>
         </label>
  
     </div>
@@ -79,6 +79,32 @@
         </ul>
 
     </section>
+
+   <script>
+   var f = document.getElementById("front");
+   var b = document.getElementById("back");
+   var bs = document.getElementById("backs");
+   var fs = document.getElementById("fronts");
+
+
+
+   bs.onclick = function () {
+       f.classList.add("front");
+       b.classList.add("back");
+       bs.style.display = "none";
+       fs.style.display = "inline-block";
+   };
+
+
+   fs.onclick = function () {
+f.classList.remove('front');
+b.classList.remove('back');
+       bs.style.display = "inline";
+       fs.style.display = "none";
+       
+       
+};
+   </script> 
 </body>
 
 </html>

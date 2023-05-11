@@ -11,6 +11,10 @@
     <link rel="icon" href="../Images/G.I">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong">
     <!-- <link rel="stylesheet" href="../CSS/bootstrap.min.css"> -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>  
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css" rel="stylesheet">  
+     <script src="../Scripts/JS/jquery-3.5.1.min.js"></script>
+    
 </head>
 
 <body>
@@ -18,7 +22,7 @@
         <div id="acc">
             <span class="fas fa-align-right"></span>
         </div>
-        <h1 id="userrName">MrWhite118</h1>
+        <h1 id="userrName">Mr_White118</h1>
     </header>
     <br>
 
@@ -26,45 +30,44 @@
     <section id="dashboard">
         <h2>Dashboard</h2>
         <div>
-            <p>Investment Level:
-                <span id="investL">0</span>
+            <p><b>Investment Level:</b>
+                <span id="upcontent">0</span>
             </p>
         </div>
         <div>
-            <p>Main Balance:
-                <span>N0</span>
+            <p><b>Main Balance:</b>
+                <span>N20000</span>
             </p>
         </div>
         <div>
-            <p>Growing Balance:
-                <span>N0</span>
+            <p><b>Growing Balance:</b>
+                <span>N80000</span>
             </p>
         </div>
         <div id="referrals">
-            <p>Referral Earnings:
-                <span>N0</span>
+            <p><b>Referral Earnings:</b>
+                <span>N7000</span>
             </p>
         </div>
     </section>
 
     <!-- Message Section Starts -->
-    <section id="message">
+    <section id="message" class="close">
         <div>
-            <p class="fMessage">Messages
+            <p class="fMessage"><b>Messages</b>
                 <span class="mCount mTotal">1</span>
-                <i class="fas fa-chevron-up" id=" Message"></i>
+                <i class="fas fa-chevron-up" id="closeMessage"></i>
             </p>
-            <p class="sMessage">Messages
+            <p class="sMessage"><b>Messages</b>
                 <span class="mCount mTotal">1</span>
                 <i class="fas fa-chevron-down" id="openMessage"></i>
             </p>
         </div>
         <div id="actualMessage">
             <div>
-                <p>Begin your journey to earn
-                    <b>N160,000</b> in 60 days! </p>
+                <p>Begin your journey to earn <b>N160,000</b> in 60 days! </p>
             </div>
-            <p>Invest the sum of N1,000 &amp; recieve N5,000 in 5 minutes!</p>
+            <p>Invest the sum of N1,000 & recieve N5,000 in 5 minutes!</p>
         </div>
     </section>
 
@@ -120,9 +123,11 @@
             </p>
         </div>
         <div>
-            <p id="logOut">Log out
+            <a href="logout.php" id="logOut">
+            <p onclick="logout()">Log out
                 <span class="fas fa-sign-out-alt"></span>
             </p>
+            </a>
         </div>
     </section>
 
@@ -175,7 +180,7 @@
             <div>
                 <p>Hello
                     <span>
-                        <b class="username">userName</b>
+                        <b class="username">Mr_White118</b>
                     </span>!!</p>
             </div>
             <div>
@@ -204,6 +209,10 @@
                             <b>Peer to Peer</b> investing platform, which simply means that the platform will neither collect
                             any money from you nor give you any money, you guys are going to be the ones to do the giving
                             and receiving in peers...</p>
+                    </div>
+                    <div>
+                        <p>You don't have to worry about people not wanting to particpate anymore and also you can choose to quit at anytime if you feel the need to do so,
+                        we already have measures at which neither of those actions will affect another, so just be rest assured...</p>
                     </div>
                     <div>
                         <p>So that's just how it is, all you need to do now is to go through all the level accordingly and you'll
@@ -235,7 +244,8 @@
             <center>
                 <h4>How to Earn</h4>
             </center>
-            <div class="how">
+          <center>
+          <div class="how">
                 <span class="fas fa-share-alt">
                     <br>
                     <br> Share link</span>
@@ -249,6 +259,7 @@
                     <br> Friends Invest</span>
 
             </div>
+          </center>
             <div>
                 <center>
                     <p>The more you invite the more you earn</p>
@@ -259,13 +270,13 @@
                     <h3>My Invitations</h3>
                 </center>
                 <p>Invitation Code:
-                    <span class="username"></span>
+                    <span class="username">Mr_White118</span>
                 </p>
                 <p>Invitation Link:
-                    <a href="#">Invitaton link</a>
+                    <a href="#">http://localhost/php/GlobalInvestments/Php/index.php?refer=Mr_White118</a>
                 </p>
                 <p>Total Invites:
-                    <span class="totalInvites">0</span>
+                    <span class="totalInvites">700</span>
                 </p>
             </div>
         </div>
@@ -290,24 +301,24 @@
                 <div>
                     <p>
                     <b>WhatsApp us @:</b>
-                    <a href="#"> +234 816 466 6798</a>
+                    <a href="#"> wa:me/GlobalInvestment.com</a>
             </p>
             <div>
                 <p>
-                    <b>Follow our twitter channel @:</b>
-                    <a href="#">globalinvestment118@twitter.com</a>
+                    <b>Follow us on twitter @:</b>
+                    <a href="https://twitter.com/GlobalInvest118">twitter.com/GlobalInvest118</a>
                 </p>
             </div>
             <div>
                 <p>
-                    <b>Follow our tiktok page @:</b>
+                    <b>Follow us on tiktok @:</b>
                     <a href="#">globalinvestment118@tiktok.com</a>
                 </p>
             </div>
             <div>
                 <p>
                     <b>Follow our telegram channel @:</b>
-                    <a href="#">globalinvestment118@telegram.com</a>
+                    <a href="https://t.me/GlobalInvestment118">t.me/GlobalInvestment118</a>
                 </p>
             </div>
 
@@ -323,8 +334,9 @@
             </p>
         </aside>
         <div id="addDiv">
-            <button>
-                <span class="fas fa-plus"></span> Add payment option</button>
+            <button id="addPO">
+                <span class="fas fa-plus"></span> Add payment option
+            </button>
 
         </div>
     </section>
@@ -339,28 +351,28 @@
                 <h1>Contribution</h1>
             </center>
             <div>
-                <p>Contributor's Name:
-                    <span class="fullName"></span>
+                <p><b>Contributor's Name:</b>
+                    <span class="fullName"> Name </span>
                 </p>
             </div>
             <div>
-                <p>Investment Level:
-                    <span class="currentLevel"></span>
+                <p><b>Investment Level:</b>
+                    <span class="currentLevel">5</span>
                 </p>
             </div>
             <div>
-                <p>Amount to Contribute:
-                    <span class="amntTocontribute"></span>
+                <p><b>Amount to Contribute:</b>
+                  60000
                 </p>
             </div>
             <div>
-                <p>Amount to Recieve:
-                    <span class="amntToReceive"></span>
+                <p><b>Amount to Recieve:</b>
+                    <?php echo $amrec ?>
                 </p>
             </div>
             <div>
-                <p>Duration:
-                    <span class="recDuration"></span>
+                <p><b>Duration:</b>
+                    <?php echo $duration ?> </span>
                 </p>
             </div>
             <div id="conBtn">
@@ -379,38 +391,38 @@
         <div>
             <h3>About Me</h3>
             <div>
-                <p>Full Name:
-                    <span class="fullName"></span>
+                <p><b>Full Name:</b>
+                    <span class="fullName">Fullname</span>
                 </p>
             </div>
             <div>
-                <p>Username:
-                    <span class="username"></span>
+                <p><b>Username:</b>
+                    <span class="username">Mr_White118</span>
                 </p>
             </div>
             <div>
-                <p>Email Address:
-                    <span class="emailAddress"></span>
+                <p><b>Email Address:</b>
+                    <span class="emailAddress"><a href="mailto:<?php echo($user['Email Address']) ?>">abdullateefoteju@gmail.com</a></span>
                 </p>
             </div>
             <div>
-                <p>Phone Number:
-                    <span class="phoneNumber"></span>
+                <p><b>Phone Number:</b>
+                    <span class="phoneNumber"><a href="#">08025675663</a></span>
                 </p>
             </div>
             <div>
-                <p>Investment Level:
-                    <span class="currentLevel"></span>
+                <p><b>Investment Level:</b>
+                    <span class="currentLevel">5</span>
                 </p>
             </div>
             <div>
-                <p>Total Investment:
-                    <span class="totalInvestment"></span>
+                <p><b>Total Investments:</b>
+                    <span>N<span class="totalInvestment">40000</span></span>
                 </p>
             </div>
             <div>
-                <p>Total Referrals:
-                    <span class="totalInvites"></span>
+                <p><b>Total Referrals:</b>
+                    <span class="totalInvites">700</span>
                 </p>
             </div>
         </div>
@@ -423,17 +435,17 @@
             </p>
         </aside>
         <div id="passTop">
-            <form action="#">
+            <form action="" method="POST">
                 <div>
                     <label for="currentPassword">
                         Input Current Password:
-                        <input type="password" id="currentPassword" placeholder="Current Password" required>
+                        <input type="password" name="password" id="currentPassword" placeholder="Current Password" required> <span class="fas fa-eye" id="pps"></span>
                     </label>
                 </div>
                 <div>
                     <label for="newPassword">
                         Input New Password:
-                        <input type="password" id="newPassword" placeholder="New Password" required>
+                        <input type="password" name="newPass" id="newPassword" placeholder="New Password" required> <span class="fas fa-eye" id="pps1"></span>
                     </label>
                 </div>
                 <div>
@@ -451,11 +463,11 @@
                 </p>
             </aside>
             <div id="emailTop">
-                <form action="#">
+                <form action="#" method="POST">
                     <div>
                         <label for="newEmail">
                             Input New Email:
-                            <input type="password" id="newEmail" placeholder="New Email..." required>
+                            <input type="email" name="newEmail" id="newEmail" placeholder="New Email..." required>
                         </label>
                     </div>
 
@@ -475,11 +487,11 @@
                 </p>
             </aside>
             <div id="userTop">
-                <form action="#">
+                <form action="#" method="POST">
                     <div>
                         <label for="newUsername">
                             Input New Username:
-                            <input type="text" id="newUsername" placeholder="New Username" required>
+                            <input type="text" name="newUsername" id="newUsername" placeholder="New Username" required>
                         </label>
                     </div>
 
@@ -502,13 +514,13 @@
             <p id="phnCode">Input Code sent to your Phone Number/Email Address</p>
 
             <div id="codes">
-                <form action="#">
-                    <input type="text" required>
-                    <input type="text" required>
-                    <input type="text" required>
-                    <input type="text" required>
-                    <input type="text" required>
-                    <input type="text" required>
+                <form action="#" method="POST">
+                    <input type="text" required maxlength="1" id="codes1">
+                    <input type="text" required maxlength="1" id="codes2">
+                    <input type="text" required maxlength="1" id="codes3">
+                    <input type="text" required maxlength="1" id="codes4">
+                    <input type="text" required maxlength="1" id="codes5">
+                    <input type="text" required maxlength="1" id="codes6">
                 </form>
             </div>
             <div>
@@ -518,12 +530,58 @@
 
     </section>
 
-
+<section id="bank">
+<aside>
+            <p id="bckDet">
+                <span class="fas fa-chevron-left"></span> Account Details
+            </p>
+        </aside><br>
+        <br>
+        <br>
+   <form method="POST">
+        <div>
+        <label for="fullname">
+            <b>Account Holder's Name:</b> <input type="text" placeholder="full name..." required name="aFullName" id="aFullName" <?php if (isset($user['Account Holders Name'])) { ?> value=" <?php echo $user['Account Holders Name'] ?> <?php } ?>">
+        </label>
+        </div>
+        <div>
+        <label for="bankName">
+            <b>Bank Name:</b> <input type="text" list="banks" placeholder="Choose Bank..." required name="aBankName" id="aBankName" <?php if (isset($user['Bank Name'])) { ?> value="<?php echo $user['Bank Name'] ?> <?php } ?>">
+            <datalist id="banks">
+                <option value="Access Bank">Access Bank</option>
+                <option value="ALAT by WEMA">ALAT by WEMA</option>
+                <option value="Fidelity Bank">Fidelity Bank</option>
+                <option value="First Bank of Nigeria">First Bank of Nigeria</option>
+                <option value="First City Monument Bank">First City Monument Bank</option>
+                <option value="Guaranty Trust Bank">Guaranty Trust Bank</option>
+                <option value="Kuda Bank">Kuda Bank</option>
+                <option value="Opay Bank">Opay Bank</option>
+                <option value="Palmpay Bank">Palmpay Bank</option>
+                <option value="Polaris Bank">Polaris Bank</option>
+                <option value="Sterling Bank">	Sterling Bank</option>
+                <option value="United Bank For Africa">United Bank For Africa</option>
+                <option value="Union Bank of Nigeria">Union Bank of Nigeria</option>
+                <option value="Wema Bank">Wema Bank</option>
+                <option value="Zenith Bank">Zenith Bank</option>
+            </datalist>
+        </label>
+        </div>
+        <div>
+        <label for="acctnumber">
+            <b>Account Number:</b> <input type="text" placeholder="account number..." required name="aAcctNum" id="aAcctNum"<?php if (isset($user['Account Number'])) { ?> value="<?php echo $user['Account Number'] ?> <?php } ?>">
+        </label>
+        </div>
+        <div id="saveDiv">
+            <input type="submit" value="Save" id="saveAcc">
+        </div>
+   </form>
+</section>
 
     <!-- Transaction Section Starts -->
     <section id="transactions">
         <h3>Transactions</h3>
         <div id="topStatus">
+            <h4>S/N</h4>
             <h4>Amount</h4>
             <h4>Type</h4>
             <h4>Status</h4>
@@ -533,20 +591,61 @@
     <!-- Witdrawal Section Starts -->
     <section id="withdrawal"  class="close">
         <div>
-            <span class="fas fa-times" id=" With"></span>
+            <span class="fas fa-times" id="closeWith"></span>
 
-            <form action="#">
+            <form action="#" method="POST">
                 <label for="amount">
                     <p></p>
                     <b>Amount to Withdraw</b>
                     </p>
-                    <input type="number" placeholder="Input Amount here..." required>
-                    <p id="errors"></p>
+                    <input type="text" placeholder="Input Amount here..." name="withdrawA" id="withdrawA" required>
+                    <p id="errorsW"></p>
                     <input type="submit" value="Withdraw" id="checkOut">
 
                 </label>
             </form>
         </div>
+    </section>
+
+    <section id="t_pane">
+    <aside>
+        <h1>Transaction</h1>
+        <span class="fas fa-times" id="ct"></span>
+    </aside>
+    <div id="yrt">
+        <p class="bg">You are to make a payment of <b> <?php echo $amcon ?></b> to <b>?</b></p>
+        <div>
+            <p><b>Investor's Name: </b> <?php echo 'name here' ?></p>
+        </div>
+        <div>
+            <p><b>Account Number: </b> <?php echo 'number here' ?></p>
+        </div>
+        <div>
+            <p><b>Bank Name: </b> <?php echo 'name here' ?></p>
+        </div>
+    </div>
+    <div class="how">
+    <p class="bg">How would you like to make the payment?</p>    
+    <div class="bank">
+        <div><h3>Bank Transfer</h3></div>
+        <div>
+        <p>You'll have to call the receiver after you have sucessfully made the payment to confirm payment before you can proceed.</p>
+        </div>
+    </div>
+    <div class="card">
+        <div><h3>Card Payment</h3></div>
+        <div>
+        <p>Fast and Secure, you won't need to call anyone and the transaction will proceed as soon as the payment is confirmed by your bank...</p>
+        </div>
+    </div>
+      <div>
+      <div><h3>Choose Payment Method</h3></div>
+    <div class="choose">
+        <div><a href="#" id="payb" class="pay b">Pay with Bank</a></div>
+        <div><a href="#" id="payc" class="pay c">Pay with Card</a></div>
+    </div>
+      </div>
+    </div>
     </section>
 
 
@@ -555,10 +654,360 @@
             <span class="fas fa-plus-circle"></span> Invest</a>
         <a href="#" id="withdraw">
             <span class="fa fa-arrow-alt-circle-down"></span> Withdraw</a>
-        <a href="#"></a>
     </footer>
 
     <script src="../Scripts/JS/index1.js"></script>
-</body>
+    <script>
 
+     $('#conBtn').on('click', function(k){
+
+
+     });
+
+    // Withdrawal 
+
+
+ $('#checkOut').on('click', function(l){
+    var withdrawA = $('#withdrawA').val();
+    var errorsW = $('#errorsW');
+    errorsW.css({"color": "red"});
+
+    if (withdrawA.length != "") {
+        $('#withdrawA').css({"border": "2px solid green"});
+    
+if (isNaN(withdrawA)) {
+    errorsW.html("Please input numbers only!");
+    $('#withdrawA').css({"border": "2px solid red"});
+    
+
+} else {
+    errorsW.html("");
+    $('#withdrawA').css({"border": "2px solid green"});
+    
+ $.ajax({
+                    type: 'POST',
+                    url: 'withdraw.php',
+                    data: {withdrawA: withdrawA},
+                    success: function(withdraw){
+                        if (withdraw.indexOf("Hurray") > -1) {
+                            Swal.fire({
+                                title: 'Success!',
+                                text: withdraw,
+                                icon: 'success',
+                                confirmButtonText: 'Okay'
+                          }) 
+                        } else {
+                            Swal.fire({
+                                title: 'Error!',
+                                text: withdraw,
+                                icon: 'error',
+                                confirmButtonText: 'Retry'
+                          }) 
+                        }
+
+                        
+                    },
+                    error: function(withdraw){
+                        Swal.fire({
+                                title: 'Error!',
+                                text: withdraw,
+                                icon: 'error',
+                                confirmButtonText: 'Retry'
+                          }) 
+                    }
+
+
+
+ });
+
+    
+}
+}else {
+    errorsW.html("Please fill out the field!");
+    $('#withdrawA').css({"border": "2px solid red"});
+    
+}
+l.preventDefault();
+
+
+ });
+
+// Updating Password
+
+ $('#remPass').on('click', function(e){
+
+ Swal.fire({
+                                title: 'Failed!',
+                                text: 'Sorry this function is unavailable at this moment, try again later.',
+                                icon: 'error',
+                                confirmButtonText: 'Okay'
+                          })
+
+ });
+ $('#confirmPassChange').on('click', function(e){
+
+     var cPass = $('#currentPassword').val();
+     var newPass = $('#newPassword').val();
+
+   e.preventDefault();
+  
+if (cPass.length > 0) {
+     if (newPass.length > 5) {
+     $.ajax({
+                    type: 'POST',
+                    url: 'updatePass.php',
+                    data: {password: cPass,newPass: newPass},
+                    success: function(data){
+                          if (data == "Password changed successfully!") {
+                            Swal.fire({
+                                title: 'Successful!',
+                                text: 'Your Password has been updated Successfully!, kindly refresh the page to continue',
+                                icon: 'success',
+                                confirmButtonText: 'Okay'
+                          }) 
+                          } else {
+                            Swal.fire({
+                                title: 'Error!',
+                                text: data,
+                                icon: 'error',
+                                confirmButtonText: 'Retry'
+                          }) 
+                          }
+                    },
+                    error: function(data){
+                        Swal.fire({
+                                title: 'Error!',
+                                text: data,
+                                icon: 'error',
+                                confirmButtonText: 'Retry'
+                          }) 
+                    }
+
+                    });
+
+ } else {
+             
+                        Swal.fire({
+                                title: 'Error!',
+                                text: 'New Password must be at least 6 characters long!',
+                                icon: 'error',
+                                confirmButtonText: 'Retry'
+                          }) 
+ }
+} else {
+                        Swal.fire({
+                                title: 'Error!',
+                                text: 'Please input current Password!',
+                                icon: 'error',
+                                confirmButtonText: 'Retry'
+                          }) 
+}
+
+
+   });
+
+//    Update Email
+
+$('#confirmEmailChange').on('click', function(b){
+    var newEmail = $('#newEmail').val();
+
+   b.preventDefault();
+   var valid = this.form.checkValidity();
+if (valid) {
+    if (newEmail.length != "") {
+        $.ajax({
+                    type: 'POST',
+                    url: 'updateEmail.php',
+                    data: {newEmail: newEmail},
+                    success: function(email) {
+                         if (email == "Your Email Address has been updated successful!") {
+                            Swal.fire({
+                                title: 'Successful!',
+                                text: 'Your Email has been updated Successfully!, kindly refresh the page to continue',
+                                icon: 'success',
+                                confirmButtonText: 'Okay'
+                          }) 
+                          } else {
+                            Swal.fire({
+                                title: 'Error!',
+                                text: email,
+                                icon: 'error',
+                                confirmButtonText: 'Retry'
+                          }) 
+                          }
+                        
+                    },
+                    error: function(email) {
+                        Swal.fire({
+                                title: 'Error!',
+                                text: email,
+                                icon: 'error',
+                                confirmButtonText: 'Retry'
+                          }) 
+                    }
+    
+});
+    } else {
+                    Swal.fire({
+                                title: 'Error!',
+                                text: 'Please Input an email address',
+                                icon: 'error',
+                                confirmButtonText: 'Retry'
+                          }) 
+    }
+} else {
+                    Swal.fire({
+                                title: 'Error!',
+                                text: 'Please enter a valid email Address',
+                                icon: 'error',
+                                confirmButtonText: 'Retry'
+                          }) 
+}
+    
+
+   
+
+});
+
+// Updating User Name
+
+$('#confirmUserChange').on('click', function(c){
+    var newUsername = $('#newUsername').val();
+
+    c.preventDefault();
+
+    if (newUsername.length > 4) {
+        $.ajax({
+                    type: 'POST',
+                    url: 'updateUser.php',
+                    data: {newUsername: newUsername},
+                    success: function(user) {
+                        if (user == "Your User Name has been changed successfully!") {
+                            Swal.fire({
+                                title: 'Successful!',
+                                text: 'Your User Name has been changed successfully!, kindly refresh the page to continue',
+                                icon: 'success',
+                                confirmButtonText: 'Okay'
+                          }) 
+                          } else {
+                            Swal.fire({
+                                title: 'Error!',
+                                text: "User Name taken, try another!",
+                                icon: 'error',
+                                confirmButtonText: 'Retry'
+                          }) 
+                          }
+                    },
+                    error: function(user) {
+                        Swal.fire({
+                                title: 'Error!',
+                                text: user,
+                                icon: 'error',
+                                confirmButtonText: 'Retry'
+                          }) 
+                    }
+    
+});
+    } else {
+        Swal.fire({
+                                title: 'Error!',
+                                text: 'User Name must be at least 5 characters long!',
+                                icon: 'error',
+                                confirmButtonText: 'Retry'
+                          }) 
+    }
+
+
+
+
+});
+
+// Setting Bank Details
+
+$('#saveAcc').on('click', function(d){
+
+var aFullName = $('#aFullName').val();
+var aBankName = $('#aBankName').val();
+var aAcctNum = $('#aAcctNum').val();
+
+d.preventDefault();
+
+if (aFullName.length > 5) {
+if (aBankName.length !== "") {
+if (aAcctNum.length === 10) {
+$.ajax({
+               type: 'POST',
+               url: 'updateBD.php',
+               data: {aFullName: aFullName,aBankName: aBankName,aAcctNum: aAcctNum},
+               success: function(account){
+                     if (account == "Your Account Details has been set successfully!") {
+                       Swal.fire({
+                           title: 'Successful!',
+                           text: 'Your Account Details has been set successfully!, kindly refresh the page to continue',
+                           icon: 'success',
+                           confirmButtonText: 'Okay'
+                     }) 
+                     } else {
+                       Swal.fire({
+                           title: 'Error!',
+                           text: account,
+                           icon: 'error',
+                           confirmButtonText: 'Retry'
+                     }) 
+                     }
+               },
+               error: function(account){
+                   Swal.fire({
+                           title: 'Error!',
+                           text: account,
+                           icon: 'error',
+                           confirmButtonText: 'Retry'
+                     }) 
+               }
+
+               });
+
+} else {
+        
+                   Swal.fire({
+                           title: 'Error!',
+                           text: 'Account Number must be 10 characters long!',
+                           icon: 'error',
+                           confirmButtonText: 'Retry'
+                     }) 
+}
+} else {
+                   Swal.fire({
+                           title: 'Error!',
+                           text: 'Please choose a Bank or input yours!',
+                           icon: 'error',
+                           confirmButtonText: 'Retry'
+                     }) 
+}
+}else {
+    Swal.fire({
+                           title: 'Error!',
+                           text: 'Please input a valid Account Holders Name, in full!',
+                           icon: 'error',
+                           confirmButtonText: 'Retry'
+                     }) 
+}
+
+
+
+});
+
+
+
+    
+    </script>
+</body>
 </html>
+ <?php
+}
+else {
+    header("Location: index.php");
+    exit();
+}
+
+?>

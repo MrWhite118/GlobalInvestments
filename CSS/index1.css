@@ -21,7 +21,7 @@ body.dark {
     color: #fff;
 }
 
-body.dark header {
+body.dark header, body.dark #t_pane aside {
     box-shadow: 1px 2px 4px #ffffff80;
     background: black;
     color: #fff;
@@ -119,7 +119,7 @@ section div.dark {
     color: #fff;
 }
 
-#message .sMessage {
+#message .fMessage {
     display: none;
 }
 
@@ -181,6 +181,68 @@ section div.dark {
 #actualMessage .fade {
     display: none;
     transition: all 0.5s ease-in-out;
+}
+
+
+/* continue Investment Section */
+
+
+#t_pane {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background: inherit;
+    z-index: 35;
+}
+
+#t_pane aside {
+    box-shadow: 1px 2px 4px #00000080;
+    position: fixed;
+    top: 0;
+    z-index: 36;
+    background: inherit;    
+    width: 100%;
+}
+
+#t_pane aside h1 {
+    text-align: center;
+    font-size: 30px;
+}
+
+#yrt {
+    margin-top: 70px
+}
+
+.bg {
+    font-size: 21px;
+    
+}
+
+a.pay {
+    text-decoration: none;
+    padding: 15px;
+    background: brown;
+    color: #fff;
+}
+
+.choose  {
+    display: flex;
+    justify-content: center;
+}
+
+.choose div {
+    display: flex;
+    justify-content: center;
+}
+
+#ct {
+    position: absolute;
+    right: 30px;
+    top: 10px;
+    font-size: 25px;
+    z-index: 39;
+    color: orangered;
 }
 
 /* Withdrawal Section */
@@ -561,7 +623,7 @@ input#confirmUserChange, input#confirmPassChange, input#confirmEmailChange {
     border-radius: 10px;
     border: 1px dotted gray;
     float: right;
-    text-transform: uppercase;
+    text-transform: capitalize;
 }
 
 #bank input:focus {
